@@ -51,7 +51,7 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 			if(text.includes("Kaartje")){ 
-			sendTextMessage(sender, "Leuk dat je een kaartje wil bestellen ! "(0, 200))
+			sendTextMessage(sender, "Leuk dat je een kaartje wil bestellen ! ")
 		}
 		}
 		if (event.postback) {
