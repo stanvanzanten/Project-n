@@ -50,7 +50,7 @@ app.post('/webhook/', function (req, res) {
 				//sendGenericMessage(sender)
 				continue
 			}
-			if(text.includes("kaartjes", "tickets", "ticket", "kaarten")){ 
+			if(text.includes("kaart")){ 
 			sendTextMessage(sender, "Leuk dat je een kaartje wil bestellen ! ")
 		}
 			else{
