@@ -50,9 +50,12 @@ app.post('/webhook/', function (req, res) {
 				//sendGenericMessage(sender)
 				continue
 			}
-			if(text.includes("Kaartje")){ 
+			if(text.includes("kaartje")){ 
 			sendTextMessage(sender, "Leuk dat je een kaartje wil bestellen ! ")
 		}
+			else{
+				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens: kaartje !")
+			}
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
