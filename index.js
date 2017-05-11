@@ -51,10 +51,16 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 			if(text.includes("kaart")){ 
-			sendTextMessage(sender, "Leuk dat je een kaartje wil bestellen! ")
-		}
+			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen! ")
+			sendButtonMessage(sender, text)
+			}
 			else if(text.includes("ticket")){
 				sendTextMessage(sender, "Leuk dat je tickets wil bestellen!")
+				sendButtonMessage(sender, text)
+			}
+			else if(text.includes("bewijs")){
+				sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen!")
+				sendButtonMessage(sender, text)
 			}
 			else{
 				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens: kaartje !")
@@ -141,6 +147,32 @@ function sendGenericMessage(sender) {
 			console.log('Error: ', response.body.error)
 		}
 	})
+}
+
+function sendButtonMessage(sender, text){
+	let messagedata = {
+		"message":{
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":"Wat voor tickets wil je?",
+        "buttons":[
+          {
+            "type":"web_url",
+            "title":"Vip",
+            "payload":"Leuk dat je Vip tickets wil bestellen ! Hoe veel wil je er bestellen?"
+          },
+          {
+            "type":"postback",
+            "title":"Regular",
+            "payload":"Leuk dat je regular tickets wil bestellen! Hoe veel wil je er bestellen?"
+          }
+        ]
+      }
+    }
+  }
+}
 }
 
 // spin spin sugar
