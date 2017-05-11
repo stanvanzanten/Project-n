@@ -50,38 +50,42 @@ app.post('/webhook/', function (req, res) {
 				//sendGenericMessage(sender)
 				continue
 			}
-			decideMessage(sender,text)
-			//sendTextMessage(sender, "Leuk dat je een kaartje wil bestellen ! ")
+			if(text.includes("Kaartje")){ 
+			sendTextMessage(sender, "Leuk dat je een kaartje wil bestellen ! ")
 		}
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
-			decideMessage(sender,text)
+			sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
 			continue
 		}
 	}
 	res.sendStatus(200)
 })
 
-function decideMessage(sender,text1){
-	let text = text1.toLowerCase()
-	if (text.includes("kaartjes"){
-		sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen!")
-	}else if (text.includes("tickets")){
-		sendTextMessage(sender, "Leuk dat je tickets wil bestellen!")
-	}else{
-		sendTextMessage(sender, "Hoe kan ik je helpen, probeer het met een ander trefwoord: kaartjes of tickets")
-		sendButtonMessage(sender,"Wil je Vip of Regular tickets?")
-	}
-}
+
 // recommended to inject access tokens as environmental variables, e.g.
 // const token = process.env.FB_PAGE_ACCESS_TOKEN
 var token = "EAADAKF2rD7UBAHFPNtbSgcobModwbCstgthKey8yPp0HACPGlW3W45nEaB9SEtldMaP0l7sQBobiFDtDdDjr82lLnKiDss5fndtqkVjZC2DZBnW9kOQBdKnulJh0T13gyTeouEoi2IaqjIIsD9axEOuZCCcsgMfsxlvERr5uQZDZD"
 
 function sendTextMessage(sender, text) {
 	let messageData = { text:text }
-	sendRequest(sender,messageData)
 	
+	request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:token},
+		method: 'POST',
+		json: {
+			recipient: {id:sender},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})
 }
 
 function sendGenericMessage(sender) {
@@ -133,52 +137,7 @@ function sendGenericMessage(sender) {
 	})
 }
 
-function sendButtonMessage(sender, text){
-	let messageData = {
-		"attachment":{
-			"type":"template",
-			"payload":{
-				"template_type":"button",
-				"text":text,
-				"buttons":[
-				{ 
-					"type":"postback",
-					"title":"VIP",
-					"payload":"Leuk dat je vip tickets wil!"
-				},
-				{
-					"type":"postback",
-					"title":"Regular",
-					"payload": "Leuk dat je regular tickets wil bestellen!"
-				}
-			]
-		}
-	}
-}
-	sendRequest(sender,messageData)
-}
-
-function sendRequest(sender,messageData){
-	request({
-		url: 'https://graph.facebook.com/v2.6/me/messages',
-		qs: {access_token:token},
-		method: 'POST',
-		json: {
-			recipient: {id:sender},
-			message: messageData,
-		}
-	}, function(error, response, body) {
-		if (error) {
-			console.log('Error sending messages: ', error)
-		} else if (response.body.error) {
-			console.log('Error: ', response.body.error)
-		}
-	})
-}
-
 // spin spin sugar
 app.listen(app.get('port'), function() {
 	console.log('running on port', app.get('port'))
 })
-
-
