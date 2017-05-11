@@ -51,8 +51,11 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 			if(text.includes("kaart")){ 
-			sendTextMessage(sender, "Leuk dat je een kaartje wil bestellen ! ")
+			sendTextMessage(sender, "Leuk dat je een kaartje wil bestellen! ")
 		}
+			else if(text.includes("ticket")){
+				sendTextMessage(sender, "Leuk dat je tickets wil bestellen!")
+			}
 			else{
 				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens: kaartje !")
 			}
