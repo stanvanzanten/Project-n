@@ -37,7 +37,7 @@ app.post('/webhook/', function (req, res) {
 			let text = event.message.text
 			if (text === 'Generic'){ 
 				console.log("welcome to chatbot")
-				sendGenericMessage(sender)
+				//sendGenericMessage(sender)
 				continue
 			}
 			if(text.includes("kaart")){ 
