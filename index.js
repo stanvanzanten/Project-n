@@ -66,6 +66,7 @@ app.post('/webhook/', function (req, res) {
 			sendTextMessage(sender, text.substring(0, 200), token)
 			continue
 		}
+		sendGeneric2Message(sender)
 	}
 	res.sendStatus(200)
 })
@@ -130,6 +131,108 @@ function sendGenericMessage(sender) {
 						"title": "Regular",
 
 						"payload": "Leuk dat je Regular tickets wil bestellen!",
+
+					}],
+
+				}]
+				
+			}
+
+		}
+
+	}
+	
+	request({
+
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+
+		qs: {access_token:token},
+
+		method: 'POST',
+
+		json: {
+
+			recipient: {id:sender},
+
+			message: messageData,
+
+		}
+
+	}, function(error, response, body) {
+
+		if (error) {
+
+			console.log('Error sending messages: ', error)
+
+		} else if (response.body.error) {
+
+			console.log('Error: ', response.body.error)
+
+		}
+
+	})
+
+}
+
+function sendGeneric2Message(sender) {
+
+	let messageData = {
+
+		"attachment": {
+
+			"type": "template",
+
+			"payload": {
+
+				"template_type": "generic",
+
+				"elements": [{
+
+					"title": "Hoe veel kaartjes zou je willen bestellen?",
+
+					"subtitle": "Je kan per persoon maximaal 5 kaartjes bestellen!",
+
+					"image_url": "https://www.google.co.uk/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwi4_PS8r_LTAhUkIMAKHRwNBBkQjRwIBw&url=https%3A%2F%2Fwww.repro.nl%2Ffotobehang-zeeolifant.html&psig=AFQjCNHVDqq-CBQSJ2t-UO61OLFilNFmhg&ust=1494953916727295",
+
+					"buttons": [{
+
+						"type": "web_url",
+
+						"url": "",
+
+						"title": "1"
+
+					}, {
+
+						"type": "web_url",
+
+						"url": "",
+
+						"title": "2",
+
+					},{
+
+						"type": "web_url",
+
+						"url": "",
+
+						"title": "3",
+
+					},{
+
+						"type": "web_url",
+
+						"url": "",
+
+						"title": "4",
+
+					},{
+
+						"type": "web_url",
+
+						"url": "",
+
+						"title": "5",
 
 					}],
 
