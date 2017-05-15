@@ -47,7 +47,7 @@ app.post('/webhook/', function (req, res) {
 			}
 			else if(text.includes("ticket")){
 				sendTextMessage(sender, "Leuk dat je tickets wil bestellen!")
-				//sendButtonMessage(sender, text)
+				sendGeneric2Message(sender)
 			}
 			else if(text.includes("bewijs")){
 				sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen!")
@@ -64,7 +64,7 @@ app.post('/webhook/', function (req, res) {
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
 			sendTextMessage(sender, text.substring(0, 200), token)
-			sendGeneric2Message(sender)
+			//sendGeneric2Message(sender)
 			continue
 		}
 		
@@ -193,7 +193,7 @@ function sendGeneric2Message(sender) {
 
 					"subtitle": "Je kan per persoon maximaal 5 kaartjes bestellen!",
 
-					"image_url": "https://www.google.co.uk/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwi4_PS8r_LTAhUkIMAKHRwNBBkQjRwIBw&url=https%3A%2F%2Fwww.repro.nl%2Ffotobehang-zeeolifant.html&psig=AFQjCNHVDqq-CBQSJ2t-UO61OLFilNFmhg&ust=1494953916727295",
+					"image_url": "",
 
 					"buttons": [{
 
