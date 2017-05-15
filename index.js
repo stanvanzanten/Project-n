@@ -51,9 +51,9 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 			if(text.includes("kaart")){ 
+			//var myButton = function(sendButtonMessage)
 			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen! ")
-				//sendButtonMessage(sender, text)
-				sendTextMessage(sender, function(sendButtonMessage))
+				sendButtonMessage(sender, "Hoe veel kaartjes zou je willen bestellen?")
 			}
 			else if(text.includes("ticket")){
 				sendTextMessage(sender, "Leuk dat je tickets wil bestellen!")
@@ -63,13 +63,17 @@ app.post('/webhook/', function (req, res) {
 				sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen!")
 				//sendButtonMessage(sender, text)
 			}
+			else if(text.includes("h")){
+				sendTextMessage(sender, "Hoi! Wat kan ik voor je doen ?")
+			}
 			else{
 				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens: kaartje !")
 			}
-		}
+			
+			}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
-			sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
+			sendButtonMessage(sender, text)
 			continue
 		}
 	}
@@ -157,7 +161,7 @@ function sendButtonMessage(sender, text){
       "type":"template",
       "payload":{
         "template_type":"button",
-        "text":"Wat voor tickets wil je?",
+        "text":text,
         "buttons":[
           {
             "type":"web_url",
