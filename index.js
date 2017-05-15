@@ -64,9 +64,10 @@ app.post('/webhook/', function (req, res) {
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
 			sendTextMessage(sender, text.substring(0, 200), token)
+			sendGeneric2Message(sender)
 			continue
 		}
-		sendGeneric2Message(sender)
+		
 	}
 	res.sendStatus(200)
 })
