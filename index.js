@@ -109,27 +109,27 @@ function sendGenericMessage(sender) {
 
 				"elements": [{
 
-					"title": "First card",
+					"title": "Wat voor kaartjes zou je willen bestellen?",
 
-					"subtitle": "Element #1 of an hscroll",
+					"subtitle": "We hebben VIP of Regular tickets!",
 
-					"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+					"image_url": "https://www.google.co.uk/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwi4_PS8r_LTAhUkIMAKHRwNBBkQjRwIBw&url=https%3A%2F%2Fwww.repro.nl%2Ffotobehang-zeeolifant.html&psig=AFQjCNHVDqq-CBQSJ2t-UO61OLFilNFmhg&ust=1494953916727295",
 
 					"buttons": [{
 
-						"type": "web_url",
+						"type": "postback",
 
-						"url": "https://www.messenger.com",
+						"title": "VIP",
 
-						"title": "web url"
+						"payload": "Leuk dat je VIP tickets wil bestellen!"
 
 					}, {
 
 						"type": "postback",
 
-						"title": "Postback",
+						"title": "Regular",
 
-						"payload": "Payload for first element in a generic bubble",
+						"payload": "Leuk dat je Regular tickets wil bestellen!",
 
 					}],
 
