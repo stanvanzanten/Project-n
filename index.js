@@ -42,7 +42,7 @@ app.post('/webhook/', function (req, res) {
 			}
 			if(text.includes("kaart")){ 
 			//var myButton = function(sendButtonMessage)
-			//sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen! ")
+			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen! ")
 			sendButtonMessage(sender, "Wat voor soort kaartjes zou je willen bestellen?")
 			}
 			else if(text.includes("ticket")){
