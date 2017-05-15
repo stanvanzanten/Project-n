@@ -63,7 +63,7 @@ app.post('/webhook/', function (req, res) {
 				sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen!")
 				//sendButtonMessage(sender, text)
 			}
-			else if(text.includes("h")){
+			else if(text.includes("H")){
 				sendTextMessage(sender, "Hoi! Wat kan ik voor je doen?")
 			}
 			else{
