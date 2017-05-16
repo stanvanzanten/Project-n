@@ -63,8 +63,8 @@ app.post('/webhook/', function (req, res) {
 			}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
-			sendTextMessage(sender, "Je bestelling is ontvangen! Als je via de onderstaande link betaalt sturen we ze direct naar je toe.")
-			//sendGeneric2Message(sender)
+			//sendTextMessage(sender, "Je bestelling is ontvangen! Als je via de onderstaande link betaalt sturen we ze direct naar je toe.")
+			sendGeneric2Message(sender)
 			continue
 		}
 		
@@ -244,51 +244,19 @@ function sendGeneric2Message(sender) {
 
 				"elements": [{
 
-					"title": "Hoe veel kaartjes zou je willen bestellen?",
+					"title": "Je bestelling is ontvangen !",
 
-					"subtitle": "Je kan per persoon maximaal 5 kaartjes bestellen!",
+					"subtitle": "Klik op de onderstaande knop om te betalen !",
 
-					"image_url": "",
+					//"image_url": "",
 
 					"buttons": [{
 
 						"type": "web_url",
 
-						"url": "",
+						"url": "https://betaal.cmpayments.nl/check-out/ACH-44BA7A47-E96F-4263-83C1-3E3198F58A8F",
 
-						"title": "1"
-
-					}, {
-
-						"type": "web_url",
-
-						"url": "",
-
-						"title": "2",
-
-					},{
-
-						"type": "web_url",
-
-						"url": "",
-
-						"title": "3",
-
-					},{
-
-						"type": "web_url",
-
-						"url": "",
-
-						"title": "4",
-
-					},{
-
-						"type": "web_url",
-
-						"url": "",
-
-						"title": "5",
+						"title": "Betalen"
 
 					}],
 
