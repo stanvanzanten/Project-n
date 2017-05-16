@@ -123,7 +123,7 @@ function sendGenericMessage(sender) {
 
 						"title": "1 Regular",
 
-						"payload": text,
+						"payload": "Leuk dat je één Regular ticket wil kopen!"
 
 					}, {
 
@@ -131,7 +131,7 @@ function sendGenericMessage(sender) {
 
 						"title": "2 Regular",
 
-						"payload": text,
+						"payload": "Leuk dat je 2 Regular tickets wil kopen!",
 
 					}],
 
