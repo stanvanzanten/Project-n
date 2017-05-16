@@ -123,7 +123,7 @@ function sendGenericMessage(sender) {
 
 						"title": "1 Regular",
 
-						"payload": "1 Regular ticket"
+						"payload": "Leuk dat je één Regular ticket wil kopen!"
 
 					}, {
 
@@ -131,7 +131,7 @@ function sendGenericMessage(sender) {
 
 						"title": "2 Regular",
 
-						"payload": "2 Regular tickets",
+						"payload": "Leuk dat je 2 Regular tickets wil kopen!",
 
 					}],
 
@@ -149,7 +149,7 @@ function sendGenericMessage(sender) {
 
 						"title": "1 VIP",
 
-						"payload": "1 VIP Ticket",
+						"payload": "Leuk dat je één VIP ticket wil kopen!",
 
 					},	{
 
@@ -157,7 +157,7 @@ function sendGenericMessage(sender) {
 
 						"title": "2 VIP",
 
-						"payload": "2 VIP Tickets",
+						"payload": "Leuk dat je 2 VIP tickets wil kopen!",
 
 					}],
 
