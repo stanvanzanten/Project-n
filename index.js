@@ -140,14 +140,14 @@ function sendGenericMessage(sender) {
 						"title": "3 Regular",
 
 						"payload": "Leuk dat je 3 Regular tickets wil kopen!"
-					}],/*{
+					},{
 						
 						"type": "postback",
 
 						"title": "4 Regular",
 
 						"payload": "Leuk dat je 4 Regular tickets wil kopen!"
-					},{
+					}],/*{
 						
 						"type": "postback",
 
