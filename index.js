@@ -244,9 +244,9 @@ function sendGeneric2Message(sender) {
 
 				"elements": [{
 
-					"title": "Je bestelling is ontvangen !",
+					"title": "Je bestelling is ontvangen!",
 
-					"subtitle": "Klik op de onderstaande knop om te betalen !",
+					"subtitle": "Klik op de onderstaande knop om te betalen!",
 
 					//"image_url": "",
 
