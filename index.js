@@ -65,6 +65,9 @@ app.post('/webhook/', function (req, res) {
 			let text = JSON.stringify(event.postback)
 			//sendTextMessage(sender, "Je bestelling is ontvangen! Als je via de onderstaande link betaalt sturen we ze direct naar je toe.")
 			sendGeneric2Message(sender)
+			/*if (res.sendStatus(200) = true){ 
+			sendGeneric3Message(sender)
+			}*/
 			continue
 		}
 		
