@@ -111,38 +111,64 @@ function sendGenericMessage(sender) {
 
 				"elements": [{
 
-					"title": "Wat voor kaartjes zou je willen bestellen?",
+					"title": "Regular Tickets",
 
-					"subtitle": "We hebben VIP of Regular tickets!",
+					"subtitle": "Ga naar rechts voor de VIP Tickets",
 
-					"image_url": "https://www.google.co.uk/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwi4_PS8r_LTAhUkIMAKHRwNBBkQjRwIBw&url=https%3A%2F%2Fwww.repro.nl%2Ffotobehang-zeeolifant.html&psig=AFQjCNHVDqq-CBQSJ2t-UO61OLFilNFmhg&ust=1494953916727295",
+					"image_url": "https://www.visitljubljana.com/assets/gallery/flow.jpg",
 
 					"buttons": [{
 
 						"type": "postback",
 
-						"title": "VIP",
+						"title": "1 Regular",
 
-						"payload": "Leuk dat je VIP tickets wil bestellen!"
+						"payload": "1 Regular ticket"
 
 					}, {
 
 						"type": "postback",
 
-						"title": "Regular",
+						"title": "2 Regular",
 
-						"payload": "Leuk dat je Regular tickets wil bestellen!",
+						"payload": "2 Regular tickets",
+
+					}],
+
+				}, {
+
+					"title": "Vip Tickets",
+
+					"subtitle": "Ga naar links voor de Regular Tickets",
+
+					"image_url": "https://www.visitljubljana.com/assets/gallery/flow.jpg",
+
+					"buttons": [{
+
+						"type": "postback",
+
+						"title": "1 VIP",
+
+						"payload": "1 VIP Ticket",
+
+					},	{
+
+						"type": "postback",
+
+						"title": "2 VIP",
+
+						"payload": "2 VIP Tickets",
 
 					}],
 
 				}]
-				
+
 			}
 
 		}
 
 	}
-	
+
 	request({
 
 		url: 'https://graph.facebook.com/v2.6/me/messages',
