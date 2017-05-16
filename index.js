@@ -131,7 +131,7 @@ function sendGenericMessage(sender) {
 
 						"title": "2 Regular",
 
-						"payload": "Leuk dat je 2 Regular tickets wil kopen!",
+						"payload": "Leuk dat je 2 Regular tickets wil kopen!"
 
 					},{
 						
@@ -139,21 +139,21 @@ function sendGenericMessage(sender) {
 
 						"title": "3 Regular",
 
-						"payload": "Leuk dat je 3 Regular tickets wil kopen!",
+						"payload": "Leuk dat je 3 Regular tickets wil kopen!"
 					},{
 						
 						"type": "postback",
 
 						"title": "4 Regular",
 
-						"payload": "Leuk dat je 4 Regular tickets wil kopen!",
+						"payload": "Leuk dat je 4 Regular tickets wil kopen!"
 					},{
 						
 						"type": "postback",
 
 						"title": "5 Regular",
 
-						"payload": "Leuk dat je 5 Regular tickets wil kopen!",
+						"payload": "Leuk dat je 5 Regular tickets wil kopen!"
 					}],
 
 				}, {
