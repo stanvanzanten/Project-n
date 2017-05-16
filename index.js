@@ -47,11 +47,11 @@ app.post('/webhook/', function (req, res) {
 			}
 			else if(text.includes("ticket")){
 				sendTextMessage(sender, "Leuk dat je tickets wil bestellen!")
-				sendGeneric2Message(sender)
+				sendGenericMessage(sender)
 			}
 			else if(text.includes("bewijs")){
 				sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen!")
-				//sendButtonMessage(sender, text)
+				sendGenericMessage(sender)
 			}
 			else if(text.includes("H")){
 				sendTextMessage(sender, "Hoi! Wat kan ik voor je doen?")
@@ -133,6 +133,27 @@ function sendGenericMessage(sender) {
 
 						"payload": "Leuk dat je 2 Regular tickets wil kopen!",
 
+					},{
+						
+						"type": "postback",
+
+						"title": "2 Regular",
+
+						"payload": "Leuk dat je 2 Regular tickets wil kopen!",
+					},{
+						
+						"type": "postback",
+
+						"title": "2 Regular",
+
+						"payload": "Leuk dat je 2 Regular tickets wil kopen!",
+					},{
+						
+						"type": "postback",
+
+						"title": "2 Regular",
+
+						"payload": "Leuk dat je 2 Regular tickets wil kopen!",
 					}],
 
 				}, {
