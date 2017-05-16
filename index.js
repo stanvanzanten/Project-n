@@ -180,6 +180,14 @@ function sendGenericMessage(sender) {
 
 						"payload": "Leuk dat je 2 VIP tickets wil kopen!",
 
+					},{
+
+						"type": "postback",
+
+						"title": "3 VIP",
+
+						"payload": "Leuk dat je 3 VIP tickets wil kopen!",
+
 					}],
 
 				}]
