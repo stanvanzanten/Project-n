@@ -42,15 +42,12 @@ app.post('/webhook/', function (req, res) {
 			}
 			if(text.includes("kaart")){ 
 			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen, waar wil je naartoe? ")
-			sendGenericMessage(sender)
 			}
 			if(text.includes("ticket")){ 
 			sendTextMessage(sender, "Leuk dat je tickets wil bestellen, waar wil je naartoe? ")
-			sendGenericMessage(sender)
 			}
 			if(text.includes("bewijs")){ 
 			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen, waar wil je naartoe? ")
-			sendGenericMessage(sender)
 			}
 			if(text.includes("kaart" && "festival")){ 
 			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen! ")
