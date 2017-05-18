@@ -41,7 +41,7 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 
-			if((text.includes("kaart") && (text.includes("festival"))){ 
+			if(text.includes("kaart")){ 
 			//var myButton = function(sendButtonMessage)
 			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen! ")
 			sendGenericMessage(sender)
