@@ -40,7 +40,8 @@ app.post('/webhook/', function (req, res) {
 				//sendGenericMessage(sender)
 				continue
 			}
-			if(text.includes("kaart")){ 
+
+			if((text.includes("kaart") && (text.includes("festival"))){ 
 			//var myButton = function(sendButtonMessage)
 			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen! ")
 			sendGenericMessage(sender)
@@ -143,21 +144,7 @@ function sendGenericMessage(sender) {
 						"title": "3 Regular",
 
 						"payload": "Leuk dat je 3 Regular tickets wil kopen!"
-					}],/*{
-						
-						"type": "postback",
-
-						"title": "4 Regular",
-
-						"payload": "Leuk dat je 4 Regular tickets wil kopen!"
-					},{
-						
-						"type": "postback",
-
-						"title": "5 Regular",
-
-						"payload": "Leuk dat je 5 Regular tickets wil kopen!"
-					}],*/
+					}],
 
 				}, {
 
