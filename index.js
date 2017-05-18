@@ -50,15 +50,15 @@ app.post('/webhook/', function (req, res) {
 			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen, waar wil je naartoe? ")
 			}
 			else if(text.includes("kaart" && "festival")){ 
-			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen! ")
+			sendTextMessage(sender, "Leuk dat je naar een festival wil!")
 			sendGenericMessage(sender)
 			}
 			else if(text.includes("ticket" && "festival")){
-				sendTextMessage(sender, "Leuk dat je tickets wil bestellen!")
+				sendTextMessage(sender, "Leuk dat je naar een festival wil!")
 				sendGenericMessage(sender)
 			}
 			else if(text.includes("bewijs" && "festival")){
-				sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen!")
+				sendTextMessage(sender, "Leuk dat je naar een festival wil!")
 				sendGenericMessage(sender)
 			}
 			else if(text.includes("H")){
