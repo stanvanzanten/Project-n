@@ -43,13 +43,13 @@ app.post('/webhook/', function (req, res) {
 			if(text.includes("kaart")){ 
 			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen, waar wil je naartoe? ")
 			}
-			if(text.includes("ticket")){ 
+			else if(text.includes("ticket")){ 
 			sendTextMessage(sender, "Leuk dat je tickets wil bestellen, waar wil je naartoe? ")
 			}
-			if(text.includes("bewijs")){ 
+			else if(text.includes("bewijs")){ 
 			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen, waar wil je naartoe? ")
 			}
-			if(text.includes("kaart" && "festival")){ 
+			else if(text.includes("kaart" && "festival")){ 
 			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen! ")
 			sendGenericMessage(sender)
 			}
