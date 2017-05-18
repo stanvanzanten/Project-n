@@ -46,11 +46,11 @@ app.post('/webhook/', function (req, res) {
 			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen! ")
 			sendGenericMessage(sender)
 			}
-			else if(text.includes("ticket")){
+			else if(text.includes("ticket" && "festival")){
 				sendTextMessage(sender, "Leuk dat je tickets wil bestellen!")
 				sendGenericMessage(sender)
 			}
-			else if(text.includes("bewijs")){
+			else if(text.includes("bewijs" && "festival")){
 				sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen!")
 				sendGenericMessage(sender)
 			}
@@ -58,7 +58,7 @@ app.post('/webhook/', function (req, res) {
 				sendTextMessage(sender, "Hoi! Wat kan ik voor je doen?")
 			}
 			else{
-				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens kaartje of ticket !")
+				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, wil je misschien een kaartje kopen voor een festival?")
 			}
 			
 			}
