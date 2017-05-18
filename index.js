@@ -40,9 +40,19 @@ app.post('/webhook/', function (req, res) {
 				//sendGenericMessage(sender)
 				continue
 			}
-
+			if(text.includes("kaart")){ 
+			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen, waar wil je naartoe? ")
+			sendGenericMessage(sender)
+			}
+			if(text.includes("ticket")){ 
+			sendTextMessage(sender, "Leuk dat je tickets wil bestellen, waar wil je naartoe? ")
+			sendGenericMessage(sender)
+			}
+			if(text.includes("bewijs")){ 
+			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen, waar wil je naartoe? ")
+			sendGenericMessage(sender)
+			}
 			if(text.includes("kaart" && "festival")){ 
-			//var myButton = function(sendButtonMessage)
 			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen! ")
 			sendGenericMessage(sender)
 			}
@@ -58,7 +68,7 @@ app.post('/webhook/', function (req, res) {
 				sendTextMessage(sender, "Hoi! Wat kan ik voor je doen?")
 			}
 			else{
-				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, wil je misschien een kaartje kopen voor een festival?")
+				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens kaartjes te bestellen! ")
 			}
 			
 			}
