@@ -67,7 +67,9 @@ app.post('/webhook/', function (req, res) {
 			else{
 				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens kaartjes te bestellen! ")
 			}
-			
+			if(text.includes("Wat kan je")){
+				sendTextMessage(sender, "Ik kan je helpen om kaartjes te bestellen voor een festival !")
+			}
 			}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
