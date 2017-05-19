@@ -49,7 +49,14 @@ app.post('/webhook/', function (req, res) {
 			else if(text.includes("bewijs")){ 
 			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen, waar wil je naartoe? ")
 			}
-			else if(text.includes("kaart" && "festival")){ 
+			
+			else if(text.includes("H")){
+				sendTextMessage(sender, "Hoi! Wat kan ik voor je doen?")
+			}
+			else{
+				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens kaartjes te bestellen! ")
+			}
+			if(text.includes("kaart" && "festival")){ 
 			sendTextMessage(sender, "Leuk dat je naar een festival wil! Wat voor kaartjes wil je?")
 			sendGenericMessage(sender)
 			}
@@ -61,13 +68,9 @@ app.post('/webhook/', function (req, res) {
 				sendTextMessage(sender, "Leuk dat je naar een festival wil! Wat voor kaartjes wil je?")
 				sendGenericMessage(sender)
 			}
-			else if(text.includes("H")){
-				sendTextMessage(sender, "Hoi! Wat kan ik voor je doen?")
-			}
 			else{
 				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens kaartjes te bestellen! ")
 			}
-			
 			}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
