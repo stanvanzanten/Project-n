@@ -73,8 +73,29 @@ app.post('/webhook/', function (req, res) {
 			}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
+			sendTextMessage(sender, "Hoe veel kaartjes wil je bestellen? Je kan er maximaal 5 per persoon bestellen!")
+			if(text.includes("1" || "Een")){
+				sendTextMessage(sender, "Leuk dat je één kaartje wil bestellen!")
+				sendGeneric2Message(sender)
+			}
+			else if(text.includes("2" || "Twee")){
+				sendTextMessage(sender, "Leuk dat je twee kaartjes wil bestellen!")
+				sendGeneric2Message(sender)
+			}
+			else if(text.includes("3" || "Drie")){
+				sendTextMessage(sender, "Leuk dat je drie kaartjes wil bestellen!")
+				sendGeneric2Message(sender)
+			}
+			else if(text.includes("4" || "Vier")){
+				sendTextMessage(sender, "Leuk dat je vier kaartjes wil bestellen!")
+				sendGeneric2Message(sender)
+			}
+			else if(text.includes("5" || "Vijf")){
+				sendTextMessage(sender, "Leuk dat je vijf kaartjes wil bestellen!")
+				sendGeneric2Message(sender)
+			}
 			//sendTextMessage(sender, "Je bestelling is ontvangen! Als je via de onderstaande link betaalt sturen we ze direct naar je toe.")
-			sendGeneric2Message(sender)
+			//sendGeneric2Message(sender)
 			/*if (res.sendStatus(200) = true){ 
 			sendGeneric3Message(sender)
 			}*/
