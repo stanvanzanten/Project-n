@@ -134,9 +134,9 @@ function sendGenericMessage(sender) {
 
 						"type": "postback",
 
-						"title": "1 Regular",
+						"title": "Regular tickets!",
 
-						"payload": "Leuk dat je één Regular ticket wil kopen!"
+						"payload": "Leuk dat je Regular tickets wil kopen!"
 					}],
 
 				}, {
@@ -151,9 +151,9 @@ function sendGenericMessage(sender) {
 
 						"type": "postback",
 
-						"title": "1 VIP",
+						"title": "VIP tickets!",
 
-						"payload": "Leuk dat je één VIP ticket wil kopen!",
+						"payload": "Leuk dat je VIP tickets wil kopen!",
 
 					}],
 					
