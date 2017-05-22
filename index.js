@@ -130,30 +130,14 @@ function sendGenericMessage(sender) {
 
 					"image_url": "https://www.visitljubljana.com/assets/gallery/flow.jpg",
 
-					/*"buttons": [{
+					"buttons": [{
 
 						"type": "postback",
 
 						"title": "1 Regular",
 
 						"payload": "Leuk dat je één Regular ticket wil kopen!"
-
-					}, {
-
-						"type": "postback",
-
-						"title": "2 Regular",
-
-						"payload": "Leuk dat je 2 Regular tickets wil kopen!"
-
-					},{
-						
-						"type": "postback",
-
-						"title": "3 Regular",
-
-						"payload": "Leuk dat je 3 Regular tickets wil kopen!"
-					}],*/
+					}],
 
 				}, {
 
@@ -163,7 +147,7 @@ function sendGenericMessage(sender) {
 
 					"image_url": "https://www.visitljubljana.com/assets/gallery/flow.jpg",
 
-					/*"buttons": [{
+					"buttons": [{
 
 						"type": "postback",
 
@@ -171,24 +155,7 @@ function sendGenericMessage(sender) {
 
 						"payload": "Leuk dat je één VIP ticket wil kopen!",
 
-					},	{
-
-						"type": "postback",
-
-						"title": "2 VIP",
-
-						"payload": "Leuk dat je 2 VIP tickets wil kopen!",
-
-					},{
-
-						"type": "postback",
-
-						"title": "3 VIP",
-
-						"payload": "Leuk dat je 3 VIP tickets wil kopen!",
-
-
-					}],*/
+					}],
 					
 				}]
 
