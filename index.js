@@ -40,52 +40,19 @@ app.post('/webhook/', function (req, res) {
 				//sendGenericMessage(sender)
 				continue
 			}
-			if(text.includes("kaart")){ 
-				sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen, waar wil je naartoe? ")
+			if(text.includes("flow festival")){
+				sendTextMessage(sender, "Leuk dat je naar het flow festival wil! Hoe veel kaartjes wil je bestellen?")
+			}
+			else if(text.includes("kaart")){ 
+				sendTextMessage(sender, "Ik wil graag kaartjes voor je bestellen, probeer eens het flow festival!")
 			}
 			else if(text.includes("ticket")){ 
-				sendTextMessage(sender, "Leuk dat je tickets wil bestellen, waar wil je naartoe? ")
+				sendTextMessage(sender, "Ik wil graag tickets voor je bestellen, probeer eens het flow festival!")
 			}
 			else if(text.includes("bewijs")){ 
-				sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen, waar wil je naartoe? ")
+				sendTextMessage(sender, "Ik wil graag kaartjes voor je bestellen, probeer eens het flow festival!"")
 			}
-			else if(text.includes("kaart" && "festival")){ 
-				sendTextMessage(sender, "Leuk dat je naar een festival wil! Wat voor kaartjes wil je?")
-				sendGenericMessage(sender)
-			}
-			else if(text.includes("ticket" && "festival")){
-				sendTextMessage(sender, "Leuk dat je naar een festival wil! Wat voor kaartjes wil je?")
-				sendGenericMessage(sender)
-			}
-			else if(text.includes("bewijs" && "festival")){
-				sendTextMessage(sender, "Leuk dat je naar een festival wil! Wat voor kaartjes wil je?")
-				sendGenericMessage(sender)
-			}
-			else if(text.includes("Wat kan je")){
-				sendTextMessage(sender, "Ik kan je helpen om kaartjes te bestellen voor een festival !")
-			}
-			else if(text.includes("H")){
-				sendTextMessage(sender, "Hoi! Wat kan ik voor je doen?")
-			}
-			else if(text.includes("1" || "Een")){
-				sendTextMessage(sender, "Leuk dat je één kaartje wil bestellen!")
-				sendGeneric2Message(sender)
-			}
-			else if(text.includes("2" || "Twee")){
-				sendTextMessage(sender, "Leuk dat je twee kaartjes wil bestellen!")
-				sendGeneric2Message(sender)
-			}
-			else if(text.includes("3" || "Drie")){
-				sendTextMessage(sender, "Leuk dat je drie kaartjes wil bestellen!")
-				sendGeneric2Message(sender)
-			}
-			else if(text.includes("4" || "Vier")){
-				sendTextMessage(sender, "Leuk dat je vier kaartjes wil bestellen!")
-				sendGeneric2Message(sender)
-			}
-			else if(text.includes("5" || "Vijf")){
-				sendTextMessage(sender, "Leuk dat je vijf kaartjes wil bestellen!")
-				sendGeneric2Message(sender)
+			
 			}
 			else{
 				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens kaartjes te bestellen! ")
