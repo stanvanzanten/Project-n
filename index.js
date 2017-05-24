@@ -67,23 +67,23 @@ app.post('/webhook/', function (req, res) {
 			else if(text.includes("H")){
 				sendTextMessage(sender, "Hoi! Wat kan ik voor je doen?")
 			}
-			else if(text.includes("1" || "Een" || "een")){
+			else if(text.includes("1" || "Een")){
 				sendTextMessage(sender, "Leuk dat je één kaartje wil bestellen!")
 				sendGeneric2Message(sender)
 			}
-			else if(text.includes("2" || "Twee" || "twee")){
+			else if(text.includes("2" || "Twee")){
 				sendTextMessage(sender, "Leuk dat je twee kaartjes wil bestellen!")
 				sendGeneric2Message(sender)
 			}
-			else if(text.includes("3" || "Drie" || "drie")){
+			else if(text.includes("3" || "Drie")){
 				sendTextMessage(sender, "Leuk dat je drie kaartjes wil bestellen!")
 				sendGeneric2Message(sender)
 			}
-			else if(text.includes("4" || "Vier" || "vier")){
+			else if(text.includes("4" || "Vier")){
 				sendTextMessage(sender, "Leuk dat je vier kaartjes wil bestellen!")
 				sendGeneric2Message(sender)
 			}
-			else if(text.includes("5" || "Vijf" || "vijf")){
+			else if(text.includes("5" || "Vijf")){
 				sendTextMessage(sender, "Leuk dat je vijf kaartjes wil bestellen!")
 				sendGeneric2Message(sender)
 			}
