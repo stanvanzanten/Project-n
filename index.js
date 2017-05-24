@@ -42,7 +42,7 @@ app.post('/webhook/', function (req, res) {
 			}
 			if(text.includes("flow festival")){
 				sendTextMessage(sender, "Leuk dat je naar het flow festival wil! Hoe veel kaartjes wil je? (Maximaal 5 per persoon")
-				if(text.includes("1")){ 
+				if(text.includes("een")){ 
 					sendTextMessage("Leuk dat je één kaartje wil bestellen!")
 					sendGeneric2Message(sender)
 				}
