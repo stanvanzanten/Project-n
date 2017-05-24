@@ -41,17 +41,17 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 			if(text.includes("kaart")){ 
-			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen, waar wil je naartoe? ")
+				sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen, waar wil je naartoe? ")
 			}
 			else if(text.includes("ticket")){ 
-			sendTextMessage(sender, "Leuk dat je tickets wil bestellen, waar wil je naartoe? ")
+				sendTextMessage(sender, "Leuk dat je tickets wil bestellen, waar wil je naartoe? ")
 			}
 			else if(text.includes("bewijs")){ 
-			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen, waar wil je naartoe? ")
+				sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen, waar wil je naartoe? ")
 			}
 			else if(text.includes("kaart" && "festival")){ 
-			sendTextMessage(sender, "Leuk dat je naar een festival wil! Wat voor kaartjes wil je?")
-			sendGenericMessage(sender)
+				sendTextMessage(sender, "Leuk dat je naar een festival wil! Wat voor kaartjes wil je?")
+				sendGenericMessage(sender)
 			}
 			else if(text.includes("ticket" && "festival")){
 				sendTextMessage(sender, "Leuk dat je naar een festival wil! Wat voor kaartjes wil je?")
@@ -67,30 +67,30 @@ app.post('/webhook/', function (req, res) {
 			else if(text.includes("H")){
 				sendTextMessage(sender, "Hoi! Wat kan ik voor je doen?")
 			}
-			else if(text.includes("1" || "Een")){
+			else if(text.includes("1" || "Een" || "een")){
 				sendTextMessage(sender, "Leuk dat je één kaartje wil bestellen!")
 				sendGeneric2Message(sender)
 			}
-			else if(text.includes("2" || "Twee")){
+			else if(text.includes("2" || "Twee" || "twee")){
 				sendTextMessage(sender, "Leuk dat je twee kaartjes wil bestellen!")
 				sendGeneric2Message(sender)
 			}
-			else if(text.includes("3" || "Drie")){
+			else if(text.includes("3" || "Drie" || "drie")){
 				sendTextMessage(sender, "Leuk dat je drie kaartjes wil bestellen!")
 				sendGeneric2Message(sender)
 			}
-			else if(text.includes("4" || "Vier")){
+			else if(text.includes("4" || "Vier" || "vier")){
 				sendTextMessage(sender, "Leuk dat je vier kaartjes wil bestellen!")
 				sendGeneric2Message(sender)
 			}
-			else if(text.includes("5" || "Vijf")){
+			else if(text.includes("5" || "Vijf" || "vijf")){
 				sendTextMessage(sender, "Leuk dat je vijf kaartjes wil bestellen!")
 				sendGeneric2Message(sender)
 			}
 			else{
 				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens kaartjes te bestellen! ")
 			}
-			}
+		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
 			sendTextMessage(sender, "Hoe veel kaartjes wil je bestellen? Je kan er maximaal 5 per persoon bestellen!")
