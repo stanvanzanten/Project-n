@@ -49,6 +49,7 @@ app.post('/webhook/', function (req, res) {
 			}
 			else if(text.includes("kaart")){ 
 				sendTextMessage(sender, "Ik wil graag kaartjes voor je bestellen, probeer eens het flow festival!")
+				sendGenericMessage(sender)
 			}
 			else if(text.includes("ticket")){ 
 				sendTextMessage(sender, "Ik wil graag tickets voor je bestellen, probeer eens het flow festival!")
