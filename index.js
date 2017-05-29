@@ -259,9 +259,9 @@ function sendGeneric2Message(sender) {
 }
 
 function sendQuickReply(sender) {
-	let messageData = { "recipient":{
+	let messageData = { /*"recipient":{
     "id":"USER_ID"
-  },
+  },*/
   "message":{
     "text":"Pick a color:",
     "quick_replies":[
