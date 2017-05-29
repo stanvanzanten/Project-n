@@ -63,8 +63,7 @@ app.post('/webhook/', function (req, res) {
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
 			sendTextMessage(sender, "Hoe veel kaartjes wil je bestellen? Je kan er maximaal 5 per persoon bestellen!")
-			sendQuickReply(sender)
-			//sendGeneric3Message(sender)
+			sendGeneric3Message(sender)
 			//sendTextMessage(sender, "Je bestelling is ontvangen! Als je via de onderstaande link betaalt sturen we ze direct naar je toe.")
 			//sendGeneric2Message(sender)
 			/*if (res.sendStatus(200) = true){ 
@@ -258,10 +257,10 @@ function sendGeneric2Message(sender) {
 
 }
 
-function sendQuickReply(sender) {
-	let messageData = { /*"recipient":{
+/*function sendQuickReply(sender) {
+	let messageData = { "recipient":{
     "id":"USER_ID"
-  },*/
+  },
   "message":{
     "text":"Pick a color:",
     "quick_replies":[
@@ -308,7 +307,7 @@ function sendQuickReply(sender) {
 
 	})
 
-}
+}*/
 
 function sendGeneric3Message(sender) {
 
