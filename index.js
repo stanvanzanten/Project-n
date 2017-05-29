@@ -62,8 +62,8 @@ app.post('/webhook/', function (req, res) {
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
-			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen!")
 			sendTextMessage(sender, "Hoe veel kaartjes wil je bestellen? Je kan er maximaal 5 per persoon bestellen!")
+			sendGeneric3Message(sender)
 			//sendTextMessage(sender, "Je bestelling is ontvangen! Als je via de onderstaande link betaalt sturen we ze direct naar je toe.")
 			//sendGeneric2Message(sender)
 			/*if (res.sendStatus(200) = true){ 
@@ -256,6 +256,111 @@ function sendGeneric2Message(sender) {
 	})
 
 }
+
+function sendGeneric3Message(sender) {
+
+	let messageData = {
+
+		"attachment": {
+
+			"type": "template",
+
+			"payload": {
+
+				"template_type": "generic",
+
+				"elements": [{
+
+					"title": "Aantal kaartjes",
+
+					"subtitle": "Ga naar rechts voor een grotere kaartkeuze!",
+
+					"image_url": "https://www.visitljubljana.com/assets/gallery/flow.jpg",
+
+					"buttons": [{
+
+						"type": "postback",
+
+						"title": "1",
+
+						"payload": "Leuk dat je Regular tickets wil kopen!" //Hier kan link van payments??
+					},{
+						"type": "postback",
+
+						"title": "2",
+
+						"payload": "Leuk dat je Regular tickets wil kopen!" //Hier kan link van payments??
+					},{
+						"type": "postback",
+
+						"title": "3",
+
+						"payload": "Leuk dat je Regular tickets wil kopen!" //Hier kan link van payments??
+					}],
+
+				}, {
+
+					"title": "Aantal kaartjes",
+
+					"subtitle": "Ga naar links voor een kleinere kaartkeuze!",
+
+					"image_url": "https://www.visitljubljana.com/assets/gallery/flow.jpg",
+
+					"buttons": [{
+
+						"type": "postback",
+
+						"title": "4",
+
+						"payload": "Leuk dat je VIP tickets wil kopen!",
+					},{
+						"type": "postback",
+
+						"title": "5",
+
+						"payload": "Leuk dat je Regular tickets wil kopen!" //Hier kan link van payments??
+					}],
+					
+				}]
+
+			}
+
+		}
+
+	}
+
+	request({
+
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+
+		qs: {access_token:token},
+
+		method: 'POST',
+
+		json: {
+
+			recipient: {id:sender},
+
+			message: messageData,
+
+		}
+
+	}, function(error, response, body) {
+
+		if (error) {
+
+			console.log('Error sending messages: ', error)
+
+		} else if (response.body.error) {
+
+			console.log('Error: ', response.body.error)
+
+		}
+
+	})
+
+}
+
 
 function sendButtonMessage(sender, text){
 	let messagedata = {
