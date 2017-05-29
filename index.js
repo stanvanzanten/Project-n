@@ -275,7 +275,7 @@ function sendGeneric3Message(sender) {
 
 					"subtitle": "Ga naar rechts voor een grotere kaartkeuze!",
 
-					"image_url": "https://www.visitljubljana.com/assets/gallery/flow.jpg",
+					//"image_url": "https://www.visitljubljana.com/assets/gallery/flow.jpg",
 
 					"buttons": [{
 
@@ -304,7 +304,7 @@ function sendGeneric3Message(sender) {
 
 					"subtitle": "Ga naar links voor een kleinere kaartkeuze!",
 
-					"image_url": "https://www.visitljubljana.com/assets/gallery/flow.jpg",
+					//"image_url": "https://www.visitljubljana.com/assets/gallery/flow.jpg",
 
 					"buttons": [{
 
