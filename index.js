@@ -62,6 +62,7 @@ app.post('/webhook/', function (req, res) {
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
+			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen!")
 			sendTextMessage(sender, "Hoe veel kaartjes wil je bestellen? Je kan er maximaal 5 per persoon bestellen!")
 			//sendTextMessage(sender, "Je bestelling is ontvangen! Als je via de onderstaande link betaalt sturen we ze direct naar je toe.")
 			//sendGeneric2Message(sender)
@@ -70,9 +71,6 @@ app.post('/webhook/', function (req, res) {
 			}*/
 			continue
 		}
-		/*if (event.postback.title = "1"){
-			sendTextMessage(sender, "Leuk dat je één kaartje wil !")
-		}*/
 	}
 	res.sendStatus(200)
 })
