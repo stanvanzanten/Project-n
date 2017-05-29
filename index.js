@@ -41,15 +41,11 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 			if(text.includes("flow festival")){
-				sendTextMessage(sender, "Leuk dat je naar het flow festival wil! Hoe veel kaartjes wil je? (Maximaal 5 per persoon")
-				if(text.includes("een")){ 
-					sendTextMessage("Leuk dat je één kaartje wil bestellen!")
-					sendGeneric2Message(sender)
-				}
+				sendTextMessage(sender, "Leuk dat je naar het flow festival wil! Wat voor kaartjes zou je willen?")
+				sendGenericMessage(sender)
 			}
 			else if(text.includes("kaart")){ 
 				sendTextMessage(sender, "Ik wil graag kaartjes voor je bestellen, probeer eens het flow festival!")
-				sendGenericMessage(sender)
 			}
 			else if(text.includes("ticket")){ 
 				sendTextMessage(sender, "Ik wil graag tickets voor je bestellen, probeer eens het flow festival!")
@@ -74,7 +70,9 @@ app.post('/webhook/', function (req, res) {
 			}*/
 			continue
 		}
-		
+		/*if (event.postback.title = "1"){
+			sendTextMessage(sender, "Leuk dat je één kaartje wil !")
+		}*/
 	}
 	res.sendStatus(200)
 })
