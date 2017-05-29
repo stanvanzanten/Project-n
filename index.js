@@ -56,6 +56,9 @@ app.post('/webhook/', function (req, res) {
 			else if(text.includes("bewijs")){ 
 				sendTextMessage(sender, "Ik wil graag kaartjes voor je bestellen, probeer eens het flow festival!")
 			}
+			else if(text.includes("H")){
+				sendTextMessage(sender, "Hoi, wat kan ik voor je doen?")
+			}
 			else{
 				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens kaartjes te bestellen! ")
 			}
