@@ -71,8 +71,8 @@ app.post('/webhook/', function (req, res) {
 			}*/
 			continue
 		}
-		if (event.postback.title = "1"){
-			let text = JSON.stringify(event.postback.title = "1")
+		if (event.postback.buttons.title = "1"){
+			let text = JSON.stringify(event.postback)
 			sendTextMessage(sender,  "Veel plezier daar!")
 		}
 	}
