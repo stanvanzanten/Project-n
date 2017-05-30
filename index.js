@@ -72,7 +72,7 @@ app.post('/webhook/', function (req, res) {
 			continue
 		}
 		if (event.postback.title = "1"){
-			let text = JSON.stringify(event.postback)
+			let text = JSON.stringify(event.postback.title = "1")
 			sendTextMessage(sender,  "Veel plezier daar!")
 		}
 	}
