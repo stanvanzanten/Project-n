@@ -40,7 +40,7 @@ app.post('/webhook/', function (req, res) {
 				//sendGenericMessage(sender)
 				continue
 			}
-			if(text.includes("flow festival")){
+			if(text.includes("flow" && "festival")){
 				sendTextMessage(sender, "Leuk dat je naar het flow festival wil! Wat voor kaartjes zou je willen?")
 				sendGenericMessage(sender)
 			}
