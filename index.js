@@ -40,42 +40,6 @@ app.post('/webhook/', function (req, res) {
 				//sendGenericMessage(sender)
 				continue
 			}
-			
-    if (data.object === 'page') {
-
-
-
-
-
-    data.entry.forEach(function(entry) {
-
-    var pageID = entry.id;
-
-    var timeOfEvent = entry.time;
-
-
-
-    entry.messaging.forEach(function(event) {
-
-        if (event.message) {
-
-
-
-        receivedMessage(event);
-
-
-
-        } else {
-
-
-
-        if(event.postback)
-
-        {
-
-            receivedPostback(event);
-
-        }
 			if(text.includes("flow festival")){
 				sendTextMessage(sender, "Leuk dat je naar het flow festival wil! Wat voor kaartjes zou je willen?")
 				sendGenericMessage(sender)
@@ -96,18 +60,17 @@ app.post('/webhook/', function (req, res) {
 				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens kaartjes te bestellen! ")
 			}
 		}
-		/*if (event.postback) {
+		if (event.postback) {
 			let text = JSON.stringify(event.postback)
 			sendTextMessage(sender, "Hoe veel kaartjes wil je bestellen? Je kan er maximaal 5 per persoon bestellen!")
 			sendGeneric3Message(sender)
 			//sendTextMessage(sender, "Je bestelling is ontvangen! Als je via de onderstaande link betaalt sturen we ze direct naar je toe.")
 			//sendGeneric2Message(sender)
 			/*if (res.sendStatus(200) = true){ 
-			sendGeneric3Message(sender)
+			sendGeneric3Message(sender)*/
 			}
 			continue
-		}
-		if (event.postback.buttons.title = "1"){
+		/*if (event.postback.buttons.title = "1"){
 			let text = JSON.stringify(event.postback.buttons.title = "1")
 			sendTextMessage(sender,  "Veel plezier daar!")
 		}*/
@@ -120,7 +83,7 @@ app.post('/webhook/', function (req, res) {
 // const token = process.env.FB_PAGE_ACCESS_TOKEN
 var token = "EAADAKF2rD7UBAHFPNtbSgcobModwbCstgthKey8yPp0HACPGlW3W45nEaB9SEtldMaP0l7sQBobiFDtDdDjr82lLnKiDss5fndtqkVjZC2DZBnW9kOQBdKnulJh0T13gyTeouEoi2IaqjIIsD9axEOuZCCcsgMfsxlvERr5uQZDZD"
 
-function recievedPostBack(event){
+/*function recievedPostBack(event){
 	var senderID = event.sender.id;
 	var recipientID = event.recipient.id;
 	var timeOfMessage = event.timestamp;
@@ -162,7 +125,7 @@ function recievedPostBack(event){
 		sendGeneric3Message(sender)
 		break;
 	}
-}
+}*/
 
 function sendTextMessage(sender, text) {
 	let messageData = { text:text }
