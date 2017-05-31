@@ -84,16 +84,6 @@ app.post('/webhook/', function (req, res) {
 // const token = process.env.FB_PAGE_ACCESS_TOKEN
 var token = "EAADAKF2rD7UBAHFPNtbSgcobModwbCstgthKey8yPp0HACPGlW3W45nEaB9SEtldMaP0l7sQBobiFDtDdDjr82lLnKiDss5fndtqkVjZC2DZBnW9kOQBdKnulJh0T13gyTeouEoi2IaqjIIsD9axEOuZCCcsgMfsxlvERr5uQZDZD"
 
-function recievedPostBack(event){
-	var senderID = event.sender.id;
-	var recipientID = event.recipient.id;
-	var timeOfMessage = event.timestamp;
-	var payload = event.postback.payload;
-	switch (payload)
-{
-	case
-}			
-
 function sendTextMessage(sender, text) {
 	let messageData = { text:text }
 	
