@@ -76,10 +76,12 @@ app.post('/webhook/', function (req, res) {
 
 			case '1':
 					 sendTextMessage(sender, "Leuk dat je één kaartje wil!")
+					 sendGeneric2Message(sender)
 					break;
 
 			case '2':
 					 sendTextMessage(sender, "Leuk dat je 2 kaartjes wil!")
+					 sendGeneric2Message(sender)
 					break;
 			}
 			//sendTextMessage(sender, "Hoe veel kaartjes wil je bestellen? Je kan er maximaal 5 per persoon bestellen!")
