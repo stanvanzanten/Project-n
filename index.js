@@ -67,9 +67,10 @@ app.post('/webhook/', function (req, res) {
 			//sendTextMessage(sender, "Je bestelling is ontvangen! Als je via de onderstaande link betaalt sturen we ze direct naar je toe.")
 			//sendGeneric2Message(sender)
 			/*if (res.sendStatus(200) = true){ 
-			sendGeneric3Message(sender)*/
-			}
+			sendGeneric3Message(sender)
+			}*/
 			continue
+		}
 		/*if (event.postback.buttons.title = "1"){
 			let text = JSON.stringify(event.postback.buttons.title = "1")
 			sendTextMessage(sender,  "Veel plezier daar!")
@@ -83,49 +84,15 @@ app.post('/webhook/', function (req, res) {
 // const token = process.env.FB_PAGE_ACCESS_TOKEN
 var token = "EAADAKF2rD7UBAHFPNtbSgcobModwbCstgthKey8yPp0HACPGlW3W45nEaB9SEtldMaP0l7sQBobiFDtDdDjr82lLnKiDss5fndtqkVjZC2DZBnW9kOQBdKnulJh0T13gyTeouEoi2IaqjIIsD9axEOuZCCcsgMfsxlvERr5uQZDZD"
 
-/*function recievedPostBack(event){
+function recievedPostBack(event){
 	var senderID = event.sender.id;
 	var recipientID = event.recipient.id;
 	var timeOfMessage = event.timestamp;
 	var payload = event.postback.payload;
 	switch (payload)
 {
-	case 'REGULAR':
-		sendTextMessage(sender, "Hoe veel kaartjes wil je bestellen?")
-		sendGeneric3Message(sender)
-		break;
-
-	case 'VIP':
-		sendTextMessage(sender, "Hoe veel kaartjes wil je bestellen?")
-		sendGeneric3Message(sender)
-		break;
-
-	case '1':
-		sendTextMessage(sender, "Leuk dat je één kaartje wil bestellen, klik op de onderstaande link om te betalen!")
-		sendGeneric3Message(sender)
-		break;
-
-	case '2':
-		sendTextMessage(sender, "Leuk dat je twee kaartjes wil bestellen, klik op de onderstaande link om te betalen!")
-		sendGeneric3Message(sender)
-		break;
-
-	case '3':
-		sendTextMessage(sender, "Leuk dat je drie kaartjes wil bestellen, klik op de onderstaande link om te betalen!")
-		sendGeneric3Message(sender)
-		break;
-
-	case '4':
-		sendTextMessage(sender, "Leuk dat je vier kaartjes wil bestellen, klik op de onderstaande link om te betalen!")
-		sendGeneric3Message(sender)
-		break;
-
-	case '5':
-		sendTextMessage(sender, "Leuk dat je vijf kaartjes wil bestellen, klik op de onderstaande link om te betalen!")
-		sendGeneric3Message(sender)
-		break;
-	}
-}*/
+	case
+}			
 
 function sendTextMessage(sender, text) {
 	let messageData = { text:text }
@@ -173,7 +140,7 @@ function sendGenericMessage(sender) {
 
 						"title": "Regular tickets!",
 
-						"payload": "REGULAR"
+						"payload": "Leuk dat je Regular tickets wil kopen!"
 					}],
 
 				}, {
@@ -190,7 +157,7 @@ function sendGenericMessage(sender) {
 
 						"title": "VIP tickets!",
 
-						"payload": "VIP",
+						"payload": "Leuk dat je VIP tickets wil kopen!",
 
 					}],
 					
@@ -382,19 +349,19 @@ function sendGeneric3Message(sender) {
 
 						"title": "1",
 
-						"payload": "1" //Hier kan link van payments??
+						"payload": "Leuk dat je Regular tickets wil kopen!" //Hier kan link van payments??
 					},{
 						"type": "postback",
 
 						"title": "2",
 
-						"payload": "2" //Hier kan link van payments??
+						"payload": "Leuk dat je Regular tickets wil kopen!" //Hier kan link van payments??
 					},{
 						"type": "postback",
 
 						"title": "3",
 
-						"payload": "3" //Hier kan link van payments??
+						"payload": "Leuk dat je Regular tickets wil kopen!" //Hier kan link van payments??
 					}],
 
 				}, {
@@ -411,13 +378,13 @@ function sendGeneric3Message(sender) {
 
 						"title": "4",
 
-						"payload": "4",
+						"payload": "Leuk dat je VIP tickets wil kopen!",
 					},{
 						"type": "postback",
 
 						"title": "5",
 
-						"payload": "5" //Hier kan link van payments??
+						"payload": "Leuk dat je Regular tickets wil kopen!" //Hier kan link van payments??
 					}],
 					
 				}]
