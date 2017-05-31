@@ -62,6 +62,24 @@ app.post('/webhook/', function (req, res) {
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
+			switch(payload)
+			{
+			case 'Regular':
+					 sendTextMessage(sender, "Hoe veel kaartjes zou je willen?")
+					break;
+
+			case 'Vip':
+					 sendTextMessage(sender, "Hoe veel kaartjes zou je willen?")
+					break;
+
+			case '1':
+					 sendTextMessage(sender, "Leuk dat je één kaartje wil!")
+					break;
+
+			case '2':
+					 sendTextMessage(sender, "Leuk dat je 2 kaartjes wil!")
+					break;
+			}
 			sendTextMessage(sender, "Hoe veel kaartjes wil je bestellen? Je kan er maximaal 5 per persoon bestellen!")
 			sendGeneric3Message(sender)
 			//sendTextMessage(sender, "Je bestelling is ontvangen! Als je via de onderstaande link betaalt sturen we ze direct naar je toe.")
@@ -130,7 +148,7 @@ function sendGenericMessage(sender) {
 
 						"title": "Regular tickets!",
 
-						"payload": "Leuk dat je Regular tickets wil kopen!"
+						"payload": "Regular"
 					}],
 
 				}, {
@@ -147,7 +165,7 @@ function sendGenericMessage(sender) {
 
 						"title": "VIP tickets!",
 
-						"payload": "Leuk dat je VIP tickets wil kopen!",
+						"payload": "Vip",
 
 					}],
 					
@@ -339,19 +357,19 @@ function sendGeneric3Message(sender) {
 
 						"title": "1",
 
-						"payload": "Leuk dat je Regular tickets wil kopen!" //Hier kan link van payments??
+						"payload": "1" //Hier kan link van payments??
 					},{
 						"type": "postback",
 
 						"title": "2",
 
-						"payload": "Leuk dat je Regular tickets wil kopen!" //Hier kan link van payments??
+						"payload": "2" //Hier kan link van payments??
 					},{
 						"type": "postback",
 
 						"title": "3",
 
-						"payload": "Leuk dat je Regular tickets wil kopen!" //Hier kan link van payments??
+						"payload": "3" //Hier kan link van payments??
 					}],
 
 				}, {
@@ -368,13 +386,13 @@ function sendGeneric3Message(sender) {
 
 						"title": "4",
 
-						"payload": "Leuk dat je VIP tickets wil kopen!",
+						"payload": "4",
 					},{
 						"type": "postback",
 
 						"title": "5",
 
-						"payload": "Leuk dat je Regular tickets wil kopen!" //Hier kan link van payments??
+						"payload": "5" //Hier kan link van payments??
 					}],
 					
 				}]
