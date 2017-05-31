@@ -41,6 +41,34 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 			
+    if (data.object === 'page') {
+
+
+
+
+
+    data.entry.forEach(function(entry) {
+
+    var pageID = entry.id;
+
+    var timeOfEvent = entry.time;
+
+
+
+    entry.messaging.forEach(function(event) {
+
+        if (event.message) {
+
+
+
+        receivedMessage(event);
+
+
+
+        } else {
+
+
+
         if(event.postback)
 
         {
