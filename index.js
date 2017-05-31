@@ -71,7 +71,8 @@ app.post('/webhook/', function (req, res) {
 
 			case 'Vip':
 					 sendTextMessage(sender, "Hoe veel kaartjes zou je willen?")
-					 sendGeneric3Message(sender)
+					 //sendGeneric3Message(sender)
+					 sendQuickReply(sender)
 					break;
 
 			case '1':
@@ -298,8 +299,9 @@ function sendGeneric2Message(sender) {
 
 }
 
-/*function sendQuickReply(sender) {
-	let messageData = { "recipient":{
+function sendQuickReply(sender) {
+	let messageData = { 
+	"recipient":{
     "id":"USER_ID"
   },
   "message":{
@@ -318,36 +320,31 @@ function sendGeneric2Message(sender) {
     ]
   }
 }
-	request({
 
-		url: 'https://graph.facebook.com/v2.6/me/messages',
-
-		qs: {access_token:token},
-
-		method: 'POST',
-
-		json: {
-
-			recipient: {id:sender},
-
-			message: messageData,
-
-		}
-
-	}, function(error, response, body) {
-
-		if (error) {
-
-			console.log('Error sending messages: ', error)
-
-		} else if (response.body.error) {
-
-			console.log('Error: ', response.body.error)
-
-		}
-
-	})
-
+/*function sendButtonMessage(sender, text){
+	let messagedata = {
+		"message":{
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":text,
+        "buttons":[
+          {
+            "type":"web_url",
+            "title":"Vip",
+            "payload":"Leuk dat je Vip tickets wil bestellen ! Hoe veel wil je er bestellen?"
+          },
+          {
+            "type":"postback",
+            "title":"Regular",
+            "payload":"Leuk dat je regular tickets wil bestellen! Hoe veel wil je er bestellen?"
+          }
+        ]
+      }
+    }
+  }
+}
 }*/
 
 function sendGeneric3Message(sender) {
@@ -452,33 +449,6 @@ function sendGeneric3Message(sender) {
 
 	})
 
-}
-
-
-function sendButtonMessage(sender, text){
-	let messagedata = {
-		"message":{
-    "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"button",
-        "text":text,
-        "buttons":[
-          {
-            "type":"web_url",
-            "title":"Vip",
-            "payload":"Leuk dat je Vip tickets wil bestellen ! Hoe veel wil je er bestellen?"
-          },
-          {
-            "type":"postback",
-            "title":"Regular",
-            "payload":"Leuk dat je regular tickets wil bestellen! Hoe veel wil je er bestellen?"
-          }
-        ]
-      }
-    }
-  }
-}
 }
 
 // spin spin sugar
