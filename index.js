@@ -80,7 +80,22 @@ app.post('/webhook/', function (req, res) {
 					break;
 
 			case '2':
-					 sendTextMessage(sender, "Leuk dat je 2 kaartjes wil!")
+					 sendTextMessage(sender, "Leuk dat je twee kaartjes wil!")
+					 sendGeneric2Message(sender)
+					break;
+
+			case '3':
+					 sendTextMessage(sender, "Leuk dat je drie kaartjes wil!")
+					 sendGeneric2Message(sender)
+					break;
+
+			case '4':
+					 sendTextMessage(sender, "Leuk dat je vier kaartjes wil!")
+					 sendGeneric2Message(sender)
+					break;
+
+			case '5':
+					 sendTextMessage(sender, "Leuk dat je vijf kaartjes wil!")
 					 sendGeneric2Message(sender)
 					break;
 			}
