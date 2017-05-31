@@ -66,10 +66,12 @@ app.post('/webhook/', function (req, res) {
 			{
 			case 'Regular':
 					 sendTextMessage(sender, "Hoe veel kaartjes zou je willen?")
+					 sendGeneric3Message(sender)
 					break;
 
 			case 'Vip':
 					 sendTextMessage(sender, "Hoe veel kaartjes zou je willen?")
+					 sendGeneric3Message(sender)
 					break;
 
 			case '1':
@@ -80,8 +82,8 @@ app.post('/webhook/', function (req, res) {
 					 sendTextMessage(sender, "Leuk dat je 2 kaartjes wil!")
 					break;
 			}
-			sendTextMessage(sender, "Hoe veel kaartjes wil je bestellen? Je kan er maximaal 5 per persoon bestellen!")
-			sendGeneric3Message(sender)
+			//sendTextMessage(sender, "Hoe veel kaartjes wil je bestellen? Je kan er maximaal 5 per persoon bestellen!")
+			//sendGeneric3Message(sender)
 			//sendTextMessage(sender, "Je bestelling is ontvangen! Als je via de onderstaande link betaalt sturen we ze direct naar je toe.")
 			//sendGeneric2Message(sender)
 			/*if (res.sendStatus(200) = true){ 
