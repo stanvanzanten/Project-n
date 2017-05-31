@@ -60,7 +60,7 @@ app.post('/webhook/', function (req, res) {
 				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens kaartjes te bestellen! ")
 			}
 		}
-		if (event.postback) {
+		/*if (event.postback) {
 			let text = JSON.stringify(event.postback)
 			sendTextMessage(sender, "Hoe veel kaartjes wil je bestellen? Je kan er maximaal 5 per persoon bestellen!")
 			sendGeneric3Message(sender)
@@ -68,10 +68,10 @@ app.post('/webhook/', function (req, res) {
 			//sendGeneric2Message(sender)
 			/*if (res.sendStatus(200) = true){ 
 			sendGeneric3Message(sender)
-			}*/
+			}
 			continue
 		}
-		/*if (event.postback.buttons.title = "1"){
+		if (event.postback.buttons.title = "1"){
 			let text = JSON.stringify(event.postback.buttons.title = "1")
 			sendTextMessage(sender,  "Veel plezier daar!")
 		}*/
