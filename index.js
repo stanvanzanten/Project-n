@@ -320,6 +320,7 @@ function sendQuickReply(sender) {
     ]
   }
 }
+}
 
 /*function sendButtonMessage(sender, text){
 	let messagedata = {
