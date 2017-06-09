@@ -299,19 +299,10 @@ function sendQuickReply(sender) {
 		"attachment": {
 			"type": "quick_reply",
 			"message": {
-				"text": "Pick a color:",
-				"quick_replies": [
-					{
-						"type": "postback",
-						"title": "Red",
-						"payload": "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
-					},
-					{
-						"type": "postback",
-						"title": "Green",
-						"payload": "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
-					}
-				]
+    "text": "Red",
+    "quick_reply": {
+      "payload": "rood"
+    }
 			}
 		}
 	}
