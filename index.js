@@ -358,11 +358,11 @@ function sendQuickReply3(sender) {
 
 	let messageData = {
 
-		/* recipient: {
+		 recipient: {
 	 
 		   id: sender
 	 
-		 },*/
+		 },
 		"attachment": {
 			"type": "quick_reply",
 			"payload": {
