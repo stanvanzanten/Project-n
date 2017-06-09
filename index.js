@@ -299,7 +299,7 @@ function sendQuickReply(sender) {
 		"attachment": {
 			"type": "quick_reply",
 			"payload":{
-			"message": [{
+			"message": {
 				"text": "Pick a color:",
 				"quick_replies": [
 					{
@@ -313,7 +313,7 @@ function sendQuickReply(sender) {
 						"payload": "groen"
 					}
 				]
-				}]
+				}
 			}
 		}
 	}
