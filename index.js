@@ -340,7 +340,7 @@ function sendQuickReply2(sender){
 
 	let messageData = {
 		 
-		 var: newText = sendTextMessage(sender, "Wat is je favoriete karakter?");
+		 var: newText = sendTextMessage(sender, "Wat is je favoriete karakter?"),
 		 return: newText
           .addQuickReply('about', 'about')
  
