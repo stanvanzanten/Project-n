@@ -296,8 +296,9 @@ function sendGeneric2Message(sender) {
 
 function sendQuickReply(sender) {
 	let messageData = {
-		/*"attachment": {
-			"type": "quick_reply",*/
+		"attachment": {
+			"type": "quick_reply",
+			"payload":{
 			"message": {
 				"text": "Pick a color:",
 				"quick_replies": [
@@ -312,6 +313,7 @@ function sendQuickReply(sender) {
 						"payload": "groen"
 					}
 				]
+				}
 			}
 		}
 	}
@@ -343,19 +345,19 @@ function sendGeneric3Message(sender) {
 
 						"title": "1",
 
-						"payload": "1" //Hier kan link van payments??
+						"payload": "1" 
 					}, {
 						"type": "postback",
 
 						"title": "2",
 
-						"payload": "2" //Hier kan link van payments??
+						"payload": "2"
 					}, {
 						"type": "postback",
 
 						"title": "3",
 
-						"payload": "3" //Hier kan link van payments??
+						"payload": "3"
 					}],
 
 				}, {
@@ -378,7 +380,7 @@ function sendGeneric3Message(sender) {
 
 						"title": "5",
 
-						"payload": "5" //Hier kan link van payments??
+						"payload": "5"
 					}],
 
 				}]
