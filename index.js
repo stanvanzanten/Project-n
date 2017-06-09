@@ -294,7 +294,7 @@ function sendGeneric2Message(sender) {
 
 }
 
-/*function sendQuickReply(sender) {
+function sendQuickReply(sender) {
 	let messageData = { 
 "recipient":{
     "id":"USER_ID"
@@ -303,49 +303,18 @@ function sendGeneric2Message(sender) {
     "text":"Pick a color:",
     "quick_replies":[
       {
-        "content_type":"text",
+        "content_type":"postback",
         "title":"Red",
-        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
+        "payload":"Rood"
       },
       {
-        "content_type":"text",
+        "content_type":"postback",
         "title":"Green",
-        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+        "payload":"Groen"
       }
     ]
   }
 }
-	request({
-
-		url: 'https://graph.facebook.com/v2.6/me/messages',
-
-		qs: {access_token:token},
-
-		method: 'POST',
-
-		json: {
-
-			recipient: {id:sender},
-
-			message: messageData,
-
-		}
-
-	}, function(error, response, body) {
-
-		if (error) {
-
-			console.log('Error sending messages: ', error)
-
-		} else if (response.body.error) {
-
-			console.log('Error: ', response.body.error)
-
-		}
-
-	})
-
-}*/
 
 function sendGeneric3Message(sender) {
 
