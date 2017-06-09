@@ -295,28 +295,28 @@ function sendGeneric2Message(sender) {
 
 }
 
-function sendQuickReply(sender) {
+function sendQuickReply(sender){
 	let messageData = { 
-/*"recipient":{
-    "id":"USER_ID"
-  },*/
-  "message":{
-	"type": "quick_replies",
+		"attachment":{
+			"type": "quick_reply",
+			"message":{
     "text":"Pick a color:",
     "quick_replies":[
       {
-        "content_type":"postback",
+        "content_type":"text",
         "title":"Red",
-        "payload":"Rood"
+        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
       },
       {
-        "content_type":"postback",
+        "content_type":"text",
         "title":"Green",
-        "payload":"Groen"
+        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
       }
     ]
   }
 }
+		}
+	}
 
 function sendGeneric3Message(sender) {
 
