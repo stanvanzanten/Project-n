@@ -364,6 +364,8 @@ function sendQuickReply3(sender) {
 
     },*/
 	"attachment":{
+		"type":"quick_reply",
+		"payload": {
     message: {
 
       text: "What's your favorite movie genre?",
@@ -405,6 +407,7 @@ function sendQuickReply3(sender) {
     }
 
   }
+}
 }
 }
 function sendGeneric3Message(sender) {
