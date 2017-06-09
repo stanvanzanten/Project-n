@@ -67,7 +67,7 @@ app.post('/webhook/', function (req, res) {
 				case 'Regular':
 					sendTextMessage(sender, "Hoe veel kaartjes zou je willen?")
 					//sendGeneric3Message(sender)
-					sendQuickReply2(sender)
+					sendQuickReply3(recipientId)
 					break;
 
 				case 'Vip':
@@ -336,7 +336,7 @@ function sendQuickReply(sender) {
 	})
 }
 
-function sendQuickReply2(sender){
+/*function sendQuickReply2(sender){
 
 	let messageData = {
 		 
@@ -352,6 +352,59 @@ function sendQuickReply2(sender){
 
           .addQuickReply('contact', 'contact')
 	}
+}*/
+
+function sendQuickReply3(recipientId) {
+
+  let messageData = {
+
+    recipient: {
+
+      id: recipientId
+
+    },
+
+    message: {
+
+      text: "What's your favorite movie genre?",
+
+      quick_replies: [
+
+        {
+
+          "content_type":"text",
+
+          "title":"Action",
+
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ACTION"
+
+        },
+
+        {
+
+          "content_type":"text",
+
+          "title":"Comedy",
+
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY"
+
+        },
+
+        {
+
+          "content_type":"text",
+
+          "title":"Drama",
+
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
+
+        }
+
+      ]
+
+    }
+
+  }
 }
 function sendGeneric3Message(sender) {
 
