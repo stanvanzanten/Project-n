@@ -296,8 +296,8 @@ function sendGeneric2Message(sender) {
 
 function sendQuickReply(sender) {
 	let messageData = {
-		"attachment": {
-			"type": "quick_reply",
+		/*"attachment": {
+			"type": "quick_reply",*/
 			"message": {
 				"text": "Pick a color:",
 				"quick_replies": [
