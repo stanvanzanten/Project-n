@@ -8,7 +8,7 @@ const app = express()
 app.set('port', (process.env.PORT || 5000))
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
@@ -35,69 +35,68 @@ app.post('/webhook/', function (req, res) {
 		let sender = event.sender.id
 		if (event.message && event.message.text) {
 			let text = event.message.text
-			if (text === 'Generic'){ 
+			if (text === 'Generic') {
 				console.log("welcome to chatbot")
 				//sendGenericMessage(sender)
 				continue
 			}
-			if(text.includes("flow festival")){
+			if (text.includes("flow festival")) {
 				sendTextMessage(sender, "Leuk dat je naar het flow festival wil! Wat voor kaartjes zou je willen?")
 				sendGenericMessage(sender)
 			}
-			else if(text.includes("kaart")){ 
+			else if (text.includes("kaart")) {
 				sendTextMessage(sender, "Ik wil graag kaartjes voor je bestellen, probeer eens het flow festival!")
 			}
-			else if(text.includes("ticket")){ 
+			else if (text.includes("ticket")) {
 				sendTextMessage(sender, "Ik wil graag tickets voor je bestellen, probeer eens het flow festival!")
 			}
-			else if(text.includes("bewijs")){ 
+			else if (text.includes("bewijs")) {
 				sendTextMessage(sender, "Ik wil graag kaartjes voor je bestellen, probeer eens het flow festival!")
 			}
-			else if(text.includes("H")){
+			else if (text.includes("H")) {
 				sendTextMessage(sender, "Hoi, wat kan ik voor je doen?")
 			}
-			else{
+			else {
 				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens kaartjes te bestellen! ")
 			}
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
-			switch(event.postback.payload)
-			{
-			case 'Regular':
-					 sendTextMessage(sender, "Hoe veel kaartjes zou je willen?")
-					 //sendGeneric3Message(sender)
-					 sendQuickReply(sender)
+			switch (event.postback.payload) {
+				case 'Regular':
+					sendTextMessage(sender, "Hoe veel kaartjes zou je willen?")
+					//sendGeneric3Message(sender)
+					sendQuickReply(sender)
 					break;
 
-			case 'Vip':
-					 sendTextMessage(sender, "Hoe veel kaartjes zou je willen?")
-					 sendGeneric3Message(sender)
+				case 'Vip':
+					sendTextMessage(sender, "Hoe veel kaartjes zou je willen?")
+					sendGeneric3Message(sender)
 					break;
 
-			case '1':
-					 sendTextMessage(sender, "Leuk dat je één kaartje wil!")
-					 sendGeneric2Message(sender)
+				case '1':
+					sendTextMessage(sender, "Leuk dat je één kaartje wil!")
+					sendGeneric2Message(sender)
 					break;
 
-			case '2':
-					 sendTextMessage(sender, "Leuk dat je twee kaartjes wil!")
-					 sendGeneric2Message(sender)
+				case '2':
+					sendTextMessage(sender, "Leuk dat je twee kaartjes wil!")
+					sendGeneric2Message(sender)
 					break;
 
-			case '3':
-					 sendTextMessage(sender, "Leuk dat je drie kaartjes wil!")
-					 sendGeneric2Message(sender)
+				case '3':
+					sendTextMessage(sender, "Leuk dat je drie kaartjes wil!")
+					sendGeneric2Message(sender)
 					break;
 
-			case '4':
-					 sendTextMessage(sender, "Leuk dat je vier kaartjes wil!")
-					 sendGeneric2Message(sender)
+				case '4':
+					sendTextMessage(sender, "Leuk dat je vier kaartjes wil!")
+					sendGeneric2Message(sender)
 					break;
 
-			case '5':
-					 sendTextMessage(sender, "Leuk dat je vijf kaartjes wil!")
-					 sendGeneric2Message(sender)
+				case '5':
+					sendTextMessage(sender, "Leuk dat je vijf kaartjes wil!")
+					sendGeneric2Message(sender)
 					break;
 			}
 			/*if (res.sendStatus(200) = true){ 
@@ -119,17 +118,17 @@ app.post('/webhook/', function (req, res) {
 var token = "EAADAKF2rD7UBAHFPNtbSgcobModwbCstgthKey8yPp0HACPGlW3W45nEaB9SEtldMaP0l7sQBobiFDtDdDjr82lLnKiDss5fndtqkVjZC2DZBnW9kOQBdKnulJh0T13gyTeouEoi2IaqjIIsD9axEOuZCCcsgMfsxlvERr5uQZDZD"
 
 function sendTextMessage(sender, text) {
-	let messageData = { text:text }
-	
+	let messageData = { text: text }
+
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
-		qs: {access_token:token},
+		qs: { access_token: token },
 		method: 'POST',
 		json: {
-			recipient: {id:sender},
+			recipient: { id: sender },
 			message: messageData,
 		}
-	}, function(error, response, body) {
+	}, function (error, response, body) {
 		if (error) {
 			console.log('Error sending messages: ', error)
 		} else if (response.body.error) {
@@ -184,7 +183,7 @@ function sendGenericMessage(sender) {
 						"payload": "Vip",
 
 					}],
-					
+
 				}]
 
 			}
@@ -197,19 +196,19 @@ function sendGenericMessage(sender) {
 
 		url: 'https://graph.facebook.com/v2.6/me/messages',
 
-		qs: {access_token:token},
+		qs: { access_token: token },
 
 		method: 'POST',
 
 		json: {
 
-			recipient: {id:sender},
+			recipient: { id: sender },
 
 			message: messageData,
 
 		}
 
-	}, function(error, response, body) {
+	}, function (error, response, body) {
 
 		if (error) {
 
@@ -256,30 +255,30 @@ function sendGeneric2Message(sender) {
 					}],
 
 				}]
-				
+
 			}
 
 		}
 
 	}
-	
+
 	request({
 
 		url: 'https://graph.facebook.com/v2.6/me/messages',
 
-		qs: {access_token:token},
+		qs: { access_token: token },
 
 		method: 'POST',
 
 		json: {
 
-			recipient: {id:sender},
+			recipient: { id: sender },
 
 			message: messageData,
 
 		}
 
-	}, function(error, response, body) {
+	}, function (error, response, body) {
 
 		if (error) {
 
@@ -295,28 +294,28 @@ function sendGeneric2Message(sender) {
 
 }
 
-function sendQuickReply(sender){
-	let messageData = { 
-		"attachment":{
+function sendQuickReply(sender) {
+	let messageData = {
+		"attachment": {
 			"type": "quick_reply",
-			"message":{
-    "text":"Pick a color:",
-    "quick_replies":[
-      {
-        "content_type":"text",
-        "title":"Red",
-        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
-      },
-      {
-        "content_type":"text",
-        "title":"Green",
-        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
-      }
-    ]
-  }
-}
+			"message": {
+				"text": "Pick a color:",
+				"quick_replies": [
+					{
+						"content_type": "postback",
+						"title": "Red",
+						"payload": "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
+					},
+					{
+						"content_type": "postback",
+						"title": "Green",
+						"payload": "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+					}
+				]
+			}
 		}
 	}
+}
 
 function sendGeneric3Message(sender) {
 
@@ -345,13 +344,13 @@ function sendGeneric3Message(sender) {
 						"title": "1",
 
 						"payload": "1" //Hier kan link van payments??
-					},{
+					}, {
 						"type": "postback",
 
 						"title": "2",
 
 						"payload": "2" //Hier kan link van payments??
-					},{
+					}, {
 						"type": "postback",
 
 						"title": "3",
@@ -374,14 +373,14 @@ function sendGeneric3Message(sender) {
 						"title": "4",
 
 						"payload": "4",
-					},{
+					}, {
 						"type": "postback",
 
 						"title": "5",
 
 						"payload": "5" //Hier kan link van payments??
 					}],
-					
+
 				}]
 
 			}
@@ -394,19 +393,19 @@ function sendGeneric3Message(sender) {
 
 		url: 'https://graph.facebook.com/v2.6/me/messages',
 
-		qs: {access_token:token},
+		qs: { access_token: token },
 
 		method: 'POST',
 
 		json: {
 
-			recipient: {id:sender},
+			recipient: { id: sender },
 
 			message: messageData,
 
 		}
 
-	}, function(error, response, body) {
+	}, function (error, response, body) {
 
 		if (error) {
 
@@ -423,33 +422,33 @@ function sendGeneric3Message(sender) {
 }
 
 
-function sendButtonMessage(sender, text){
+function sendButtonMessage(sender, text) {
 	let messagedata = {
-		"message":{
-    "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"button",
-        "text":text,
-        "buttons":[
-          {
-            "type":"web_url",
-            "title":"Vip",
-            "payload":"Leuk dat je Vip tickets wil bestellen ! Hoe veel wil je er bestellen?"
-          },
-          {
-            "type":"postback",
-            "title":"Regular",
-            "payload":"Leuk dat je regular tickets wil bestellen! Hoe veel wil je er bestellen?"
-          }
-        ]
-      }
-    }
-  }
-}
+		"message": {
+			"attachment": {
+				"type": "template",
+				"payload": {
+					"template_type": "button",
+					"text": text,
+					"buttons": [
+						{
+							"type": "web_url",
+							"title": "Vip",
+							"payload": "Leuk dat je Vip tickets wil bestellen ! Hoe veel wil je er bestellen?"
+						},
+						{
+							"type": "postback",
+							"title": "Regular",
+							"payload": "Leuk dat je regular tickets wil bestellen! Hoe veel wil je er bestellen?"
+						}
+					]
+				}
+			}
+		}
+	}
 }
 
 // spin spin sugar
-app.listen(app.get('port'), function() {
+app.listen(app.get('port'), function () {
 	console.log('running on port', app.get('port'))
 })
