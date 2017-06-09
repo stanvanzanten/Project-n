@@ -299,10 +299,19 @@ function sendQuickReply(sender) {
 		"attachment": {
 			"type": "quick_reply",
 			"message": {
-    "text": "Red",
-    "quick_reply": {
-      "payload": "rood"
-    }
+				"text": "Pick a color:",
+				"quick_replies": [
+					{
+						"content_type": "text",
+						"title": "Red",
+						"payload": "rood"
+					},
+					{
+						"content_type": "text",
+						"title": "Green",
+						"payload": "groen"
+					}
+				]
 			}
 		}
 	}
