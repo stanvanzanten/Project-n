@@ -302,12 +302,12 @@ function sendQuickReply(sender) {
 				"text": "Pick a color:",
 				"quick_replies": [
 					{
-						"type": "text",
+						"type": "postback",
 						"title": "Red",
 						"payload": "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
 					},
 					{
-						"type": "text",
+						"type": "postback",
 						"title": "Green",
 						"payload": "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
 					}
