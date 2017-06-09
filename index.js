@@ -299,21 +299,21 @@ function sendQuickReply(sender) {
 	let messageData = {
 		"attachment": {
 			"type": "quick_reply",
-			"payload":{
-			"message": {
-				"text": "Pick a color:",
-				"quick_replies": [
-					{
-						"content_type": "text",
-						"title": "Red",
-						"payload": "rood"
-					},
-					{
-						"content_type": "text",
-						"title": "Green",
-						"payload": "groen"
-					}
-				]
+			"payload": {
+				"message": {
+					"text": "Pick a color:",
+					"quick_replies": [
+						{
+							"content_type": "text",
+							"title": "Red",
+							"payload": "rood"
+						},
+						{
+							"content_type": "text",
+							"title": "Green",
+							"payload": "groen"
+						}
+					]
 				}
 			}
 		}
@@ -356,59 +356,59 @@ function sendQuickReply(sender) {
 
 function sendQuickReply3(sender) {
 
-  let messageData = {
+	let messageData = {
 
-   /* recipient: {
+		/* recipient: {
+	 
+		   id: sender
+	 
+		 },*/
+		"attachment": {
+			"type": "quick_reply",
+			"payload": {
+				"message": {
 
-      id: sender
+					"text": "What's your favorite movie genre?",
 
-    },*/
-	"attachment":{
-		"type":"quick_reply",
-		"payload": {
-    message: {
+					"quick_replies": [
 
-      text: "What's your favorite movie genre?",
+						{
 
-      quick_replies: [
+							"content_type": "text",
 
-        {
+							"title": "Action",
 
-          "content_type":"text",
+							"payload": "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ACTION"
 
-          "title":"Action",
+						},
 
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ACTION"
+						{
 
-        },
+							"content_type": "text",
 
-        {
+							"title": "Comedy",
 
-          "content_type":"text",
+							"payload": "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY"
 
-          "title":"Comedy",
+						},
 
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY"
+						{
 
-        },
+							"content_type": "text",
 
-        {
+							"title": "Drama",
 
-          "content_type":"text",
+							"payload": "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
 
-          "title":"Drama",
+						}
 
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
+					]
 
-        }
+				}
 
-      ]
-
-    }
-
-  }
-}
-}
+			}
+		}
+	}
 }
 function sendGeneric3Message(sender) {
 
@@ -436,7 +436,7 @@ function sendGeneric3Message(sender) {
 
 						"title": "1",
 
-						"payload": "1" 
+						"payload": "1"
 					}, {
 						"type": "postback",
 
