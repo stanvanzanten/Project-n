@@ -67,7 +67,7 @@ app.post('/webhook/', function (req, res) {
 				case 'Regular':
 					sendTextMessage(sender, "Hoe veel kaartjes zou je willen?")
 					//sendGeneric3Message(sender)
-					sendQuickReply2(sender, text)
+					sendQuickReply2(sender)
 					break;
 
 				case 'Vip':
@@ -336,11 +336,12 @@ function sendQuickReply(sender) {
 	})
 }
 
-function sendQuickReply2(sender, text){
+function sendQuickReply2(sender){
 
 	let messageData = {
-		 text = sendTextMessage(sender, "Wat is je favoriete karakter?")
-
+		 
+		 var: newText = sendTextMessage(sender, "Wat is je favoriete karakter?");
+		 return: newText
           .addQuickReply('about', 'about')
  
           .addQuickReply('talk', 'talk')
