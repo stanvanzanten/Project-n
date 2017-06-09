@@ -301,6 +301,7 @@ function sendQuickReply(sender) {
     "id":"USER_ID"
   },*/
   "message":{
+	"type": "quick_replies",
     "text":"Pick a color:",
     "quick_replies":[
       {
