@@ -244,8 +244,6 @@ function sendHelpMessage(sender) {
 function sendImageMessage(sender){
 	let messageData = { 
  "recipient":{
-    "id":"USER_ID",
-
 	 "message":{
     "attachment":{
       "type":"image",
