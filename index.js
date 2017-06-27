@@ -243,7 +243,6 @@ function sendHelpMessage(sender) {
 
 function sendImageMessage(sender){
 	let messageData = { 
- "recipient":{
 	 "message":{
     "attachment":{
       "type":"image",
