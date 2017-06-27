@@ -53,8 +53,14 @@ app.post('/webhook/', function (req, res) {
 			else if (text.includes("bewijs")) {
 				sendTextMessage(sender, "Ik wil graag kaartjes voor je bestellen, probeer eens het flow festival!")
 			}
-			else if (text.includes("H")) {
+			else if (text.includes("Hallo")) {
 				sendTextMessage(sender, "Hoi, wat kan ik voor je doen?")
+			}
+			else if(text.includes("Wat kan je")){
+				sendTextMessage(sender, "Ik kan kaartjes voor het flow festival voor je bestellen!")
+			}
+			else if(text.includes("help") || text.includes("Help")){
+				sendHelpMessage(sender)
 			}
 			else {
 				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens kaartjes te bestellen! ")
@@ -99,6 +105,19 @@ app.post('/webhook/', function (req, res) {
 					sendTextMessage(sender, "Leuk dat je vijf kaartjes wil!")
 					sendGeneric2Message(sender)
 					break;
+
+				case 'Vragen':
+					sendTextMessage(sender, "Je zou me kunnen vragen of ik kaartjes voor je wil bestellen!")
+					break;
+
+				case 'Opkomend':
+					sendTextMessage(sender, "Binnenkort is er alleen het flow festival waar je naartoe kan gaan!")
+					break;
+
+				case 'Prijzen':
+					sendTextMessage(sender, "De prijzen van VIP en Regular kaartjes verschillen, kijk zelf maar eens!")
+					sendImageMessage(sender)
+					break;
 			}
 			/*if (res.sendStatus(200) = true){ 
 			sendGeneric2Message(sender)
@@ -136,6 +155,103 @@ function sendTextMessage(sender, text) {
 			console.log('Error: ', response.body.error)
 		}
 	})
+}
+
+function sendHelpMessage(sender) {
+
+	let messageData = {
+
+		"attachment": {
+
+			"type": "template",
+
+			"payload": {
+
+				"template_type": "generic",
+
+				"elements": [{
+
+					"title": "Waar kan ik je mee helpen?",
+
+					"subtitle": "Ik kan je met verschillende dingen helpen!",
+
+					//"image_url": "",
+
+					"buttons": [{
+
+						"type": "postback",
+
+						"title": "Wat kan ik aan je vragen?",
+
+						"payload": "Vragen"
+					},{
+
+						"type": "postback",
+
+						"title": "Opkomende concerten",
+
+						"payload": "Opkomend"
+					},{
+
+						"type": "postback",
+
+						"title": "Prijzen",
+
+						"payload": "Prijzen"
+
+					}],
+
+				}]
+
+			}
+
+		}
+
+	}
+
+	request({
+
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+
+		qs: { access_token: token },
+
+		method: 'POST',
+
+		json: {
+
+			recipient: { id: sender },
+
+			message: messageData,
+
+		}
+
+	}, function (error, response, body) {
+
+		if (error) {
+
+			console.log('Error sending messages: ', error)
+
+		} else if (response.body.error) {
+
+			console.log('Error: ', response.body.error)
+
+		}
+
+	})
+
+}
+
+function sendImageMessage(sender){
+	let messageData = { 
+	 "message":{
+    "attachment":{
+      "type":"image",
+      "payload":{
+        "url":"https://1drv.ms/i/s!AsqLfFT5fgKQgZYwoqtKXhqmvIwfEw"
+      }
+    }
+  }
+	}
 }
 
 function sendGenericMessage(sender) {
