@@ -63,7 +63,7 @@ app.post('/webhook/', function (req, res) {
 				sendHelpMessage(sender)
 			}
 			else {
-				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens kaartjes te bestellen! ")
+				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens kaartjes te bestellen of typ help! ")
 			}
 		}
 		if (event.postback) {
@@ -116,7 +116,7 @@ app.post('/webhook/', function (req, res) {
 
 				case 'Prijzen':
 					sendTextMessage(sender, "De prijzen van VIP en Regular kaartjes verschillen, kijk zelf maar eens: https://dmjzka.dm2302.livefilestore.com/y4m5HHipfWrrQ92uGgbwE7Z7ImK4ZADTMIwqu6yxsl0YuJQ_84sMaONzRGlVL8K6E2BKfbzWU_VQWBCzLKPbEuBRP242D3V29KmJ8b3Km1i6EQlZ9IqiLFV1thQwabO1ekSjGFAp1GSi1XaOHbwa9CEZA6S5_eVZHptA6BvrRe0nqO7G4sV3HjjUbzQUFycRDqX7Ds6RECQU-0lHbJK-7C02A?width=154&height=219&cropmode=none")
-					sendImageMessage(sender)
+					sendImage2Message(sender)
 					break;
 			}
 			/*if (res.sendStatus(200) = true){ 
@@ -200,6 +200,66 @@ function sendHelpMessage(sender) {
 						"payload": "Prijzen"
 
 					}],
+
+				}]
+
+			}
+
+		}
+
+	}
+
+	request({
+
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+
+		qs: { access_token: token },
+
+		method: 'POST',
+
+		json: {
+
+			recipient: { id: sender },
+
+			message: messageData,
+
+		}
+
+	}, function (error, response, body) {
+
+		if (error) {
+
+			console.log('Error sending messages: ', error)
+
+		} else if (response.body.error) {
+
+			console.log('Error: ', response.body.error)
+
+		}
+
+	})
+
+}
+
+function sendImage2Message(sender) {
+
+	let messageData = {
+
+		"attachment": {
+
+			"type": "template",
+
+			"payload": {
+
+				"template_type": "generic",
+
+				"elements": [{
+
+					"title": "Waar kan ik je mee helpen?",
+
+					"subtitle": "Ik kan je met verschillende dingen helpen!",
+
+					"image_url": "https://www.visitljubljana.com/assets/gallery/flow.jpg"
 
 				}]
 
