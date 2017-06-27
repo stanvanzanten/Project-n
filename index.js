@@ -365,7 +365,7 @@ function sendGeneric2Message(sender) {
 
 						"type": "web_url",
 
-						"url": "https://betaal.cmpayments.nl/check-out/ACH-44BA7A47-E96F-4263-83C1-3E3198F58A8F",
+						"url": "https://betaal.cmpayments.nl/check-out/ACH-2BBEA6D0-DA97-43E1-A11C-5EA2AFFF2815",
 
 						"title": "Betalen"
 
