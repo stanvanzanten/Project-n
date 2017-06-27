@@ -258,7 +258,7 @@ function sendImage2Message(sender) {
 
 					"subtitle": "Kijk zelf maar eens!",
 
-					"image_url": "https://onedrive.live.com/embed?cid=90027EF9547C8BCA&resid=90027EF9547C8BCA%2119248&authkey=AEKhFMLR1rePOBg"
+					"image_url": "http://s4.aconvert.com/convert/p3r68-cdx67/6r7bg-t17t9.jpg"
 
 				}]
 
