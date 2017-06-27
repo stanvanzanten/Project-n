@@ -56,10 +56,10 @@ app.post('/webhook/', function (req, res) {
 			else if (text.includes("H")) {
 				sendTextMessage(sender, "Hoi, wat kan ik voor je doen?")
 			}
-			else if(text.includes("Wat kan je")){
+			else if (text.includes("Wat kan je")) {
 				sendTextMessage(sender, "Ik kan kaartjes voor het flow festival voor je bestellen!")
 			}
-			else if(text.includes("help") || text.includes("Help")){
+			else if (text.includes("help") || text.includes("Help")) {
 				sendHelpMessage(sender)
 			}
 			else {
@@ -184,14 +184,14 @@ function sendHelpMessage(sender) {
 						"title": "Wat kan ik aan je vragen?",
 
 						"payload": "Vragen"
-					},{
+					}, {
 
 						"type": "postback",
 
 						"title": "Opkomende concerten",
 
 						"payload": "Opkomend"
-					},{
+					}, {
 
 						"type": "postback",
 
@@ -241,16 +241,14 @@ function sendHelpMessage(sender) {
 
 }
 
-function sendImageMessage(sender,text, image_url){
-	let messageData = { 
-	 "message":{
-    "attachment":{
-      "type":"image",
-      "payload":{
-        "url":"https://dmjzka.dm2302.livefilestore.com/y4m5HHipfWrrQ92uGgbwE7Z7ImK4ZADTMIwqu6yxsl0YuJQ_84sMaONzRGlVL8K6E2BKfbzWU_VQWBCzLKPbEuBRP242D3V29KmJ8b3Km1i6EQlZ9IqiLFV1thQwabO1ekSjGFAp1GSi1XaOHbwa9CEZA6S5_eVZHptA6BvrRe0nqO7G4sV3HjjUbzQUFycRDqX7Ds6RECQU-0lHbJK-7C02A?width=154&height=219&cropmode=none"
-      }
-    }
-  }
+function sendImageMessage(sender, text, image_url) {
+	let messageData = {
+		"attachment": {
+			"type": "image",
+			"payload": {
+				"url": "https://dmjzka.dm2302.livefilestore.com/y4m5HHipfWrrQ92uGgbwE7Z7ImK4ZADTMIwqu6yxsl0YuJQ_84sMaONzRGlVL8K6E2BKfbzWU_VQWBCzLKPbEuBRP242D3V29KmJ8b3Km1i6EQlZ9IqiLFV1thQwabO1ekSjGFAp1GSi1XaOHbwa9CEZA6S5_eVZHptA6BvrRe0nqO7G4sV3HjjUbzQUFycRDqX7Ds6RECQU-0lHbJK-7C02A?width=154&height=219&cropmode=none"
+			}
+		}
 	}
 }
 
@@ -474,11 +472,11 @@ function sendQuickReply3(sender) {
 
 	let messageData = {
 
-		 recipient: {
-	 
-		   id: sender
-	 
-		 },
+		recipient: {
+
+			id: sender
+
+		},
 		"attachment": {
 			"type": "quick_reply",
 			"payload": {
