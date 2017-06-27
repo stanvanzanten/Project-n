@@ -241,7 +241,7 @@ function sendHelpMessage(sender) {
 
 }
 
-function sendImageMessage(sender){
+function sendImageMessage(sender,text, image_url){
 	let messageData = { 
 	 "message":{
     "attachment":{
