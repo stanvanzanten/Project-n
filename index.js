@@ -115,8 +115,7 @@ app.post('/webhook/', function (req, res) {
 					break;
 
 				case 'Prijzen':
-					sendTextMessage(sender, "De prijzen van VIP en Regular kaartjes verschillen, kijk zelf maar eens!")
-					sendImageMessage(sender)
+					sendTextMessage(sender, "De prijzen van VIP en Regular kaartjes verschillen, kijk zelf maar eens: https://1drv.ms/i/s!AsqLfFT5fgKQgZYwoqtKXhqmvIwfEw ")
 					break;
 			}
 			/*if (res.sendStatus(200) = true){ 
