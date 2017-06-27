@@ -116,6 +116,7 @@ app.post('/webhook/', function (req, res) {
 
 				case 'Prijzen':
 					sendTextMessage(sender, "De prijzen van VIP en Regular kaartjes verschillen, kijk zelf maar eens: https://dmjzka.dm2302.livefilestore.com/y4m5HHipfWrrQ92uGgbwE7Z7ImK4ZADTMIwqu6yxsl0YuJQ_84sMaONzRGlVL8K6E2BKfbzWU_VQWBCzLKPbEuBRP242D3V29KmJ8b3Km1i6EQlZ9IqiLFV1thQwabO1ekSjGFAp1GSi1XaOHbwa9CEZA6S5_eVZHptA6BvrRe0nqO7G4sV3HjjUbzQUFycRDqX7Ds6RECQU-0lHbJK-7C02A?width=154&height=219&cropmode=none")
+					sendImageMessage(sender)
 					break;
 			}
 			/*if (res.sendStatus(200) = true){ 
@@ -242,11 +243,14 @@ function sendHelpMessage(sender) {
 
 function sendImageMessage(sender){
 	let messageData = { 
+ "recipient":{
+    "id":"USER_ID",
+
 	 "message":{
     "attachment":{
       "type":"image",
       "payload":{
-        "url":"https://1drv.ms/i/s!AsqLfFT5fgKQgZYwoqtKXhqmvIwfEw"
+        "url":"https://dmjzka.dm2302.livefilestore.com/y4m5HHipfWrrQ92uGgbwE7Z7ImK4ZADTMIwqu6yxsl0YuJQ_84sMaONzRGlVL8K6E2BKfbzWU_VQWBCzLKPbEuBRP242D3V29KmJ8b3Km1i6EQlZ9IqiLFV1thQwabO1ekSjGFAp1GSi1XaOHbwa9CEZA6S5_eVZHptA6BvrRe0nqO7G4sV3HjjUbzQUFycRDqX7Ds6RECQU-0lHbJK-7C02A?width=154&height=219&cropmode=none"
       }
     }
   }
