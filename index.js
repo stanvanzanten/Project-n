@@ -180,7 +180,7 @@ function sendHelpMessage(sender) {
 
 						"type": "postback",
 
-						"title": "Wat kan ik aan je vragen?",
+						"title": "Wat kan je?",
 
 						"payload": "Vragen"
 					}, {
